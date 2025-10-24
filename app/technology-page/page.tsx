@@ -136,7 +136,7 @@ export default function TechnologyPage() {
             Product Spec
           </motion.h2>
           <div className="my-22">
-            <motion.p>ySpace x500</motion.p>
+            <motion.p>ySpace x50</motion.p>
             <motion.h1 variants={itemVariants} className="text-gray-600 text-left ">
               Overview
             </motion.h1>
