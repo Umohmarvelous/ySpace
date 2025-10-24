@@ -1,0 +1,217 @@
+"use client"
+
+import { motion } from "framer-motion"
+import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
+import { Button } from "@/components/ui/button"
+import { ChevronDown, ChevronUp, MinusIcon, PlusIcon } from "lucide-react"
+import { useState } from "react"
+
+export default function ServicesPage() {
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+
+  const faqs = [
+    {
+      question: "How does Yspace's delivery work?",
+      answer:
+        "Once you place an order or schedule a pickup, our drones handle the delivery — fast, safe, and straight to your doorstep.",
+    },
+    {
+      question: "Can I shop and send packages on the same account?",
+      answer: "Yes, one account lets you do both — shop from vendors or send your own items anytime.",
+    },
+    {
+      question: "How fast is drone delivery?",
+      answer: "Our drone delivery is incredibly fast, typically completing deliveries within hours of order placement.",
+    },
+  ]
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  }
+
+  return (
+    <div className="bg-white">
+      <Navigation />
+
+      {/* Hero Section */}
+      <motion.section
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className="relative min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-24 flex items-center overflow-hidden"
+      >
+        <div className="absolute inset-0 opacity-20">
+          <img src="/drone-delivery-background.jpg" alt="background" className="w-full h-full object-cover" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Services</h1>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl">
+              Shop from trusted vendors or send packages fast with drone delivery.
+            </p>
+            <div className="flex gap-4">
+              <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg">
+                Shop on Marketplace
+              </Button>
+              <Button className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-6 text-lg">Send a Package</Button>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Shop on Marketplace Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+        className="py-20 bg-white"
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-12">
+            Shop on Marketplace
+          </motion.h2>
+
+{/* grid grid-col-1 md:grid-col-1  */}
+
+          <motion.div variants={itemVariants} className="bg-teal-700 rounded-3xl p-12 text-white overflow-hidden ">
+            <div className="w-full flex flex-col items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <div className="flex gap-3 mb-[-20px] zIndex-1 flex-wrap">
+                  {["Food & Groceries", "Electronics", "Fashion & Beauty", "Health & Wellness"].map((cat) => (
+                    <span key={cat} className="bg-white/20 px-4 py-2 rounded-full text-sm">
+                      {cat}
+                    </span>
+                  ))}
+                </div>  
+              </motion.div>
+
+              <div className=" w-auto flex flex-col md:flex-row items-end justify-center">
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="flex flex-row space-between "
+                >
+                <img src="/shopping-cart-groceries.jpg" alt="picture showing a shopping cart" className="index-2 w-150 h-150 rounded-2xl border-1" />
+                  
+                <p className="text-lg leading-relaxed  flex self-end align-self-baseline p-10">
+                  Get your daily essentials and favorite meals delivered faster than ever. From fresh produce to
+                  ready-to-eat dishes, Yspace connects you to trusted local vendors and delivers straight to your
+                  doorstep — fresh, fast, and right on time.
+                </p>
+                </motion.div>
+
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* FAQs Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+        className="py-30 bg-gray-50"
+      >
+        <div className="max-w-6xl mx-auto px-6 flex justify-between flex-row items-start">
+          <div className="flex flex-col ">
+            <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-2 flex self-start align-start">
+              FAQs
+            </motion.h2>
+            <motion.p variants={itemVariants} className="text-gray-600 mb-12">
+              Everything You Need to Know
+            </motion.p>
+          </div>
+
+          <motion.div variants={containerVariants} className="space-y-4 ">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                className="bg-white rounded-lg border border-gray-200 overflow-hidden w-150"
+              >
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition"
+                >
+                  <span className="font-semibold text-gray-900 text-left">{faq.question}</span> 
+                    {expandedFaq === index ? (
+                        <MinusIcon/>
+                    ) : (
+                        <PlusIcon className="w-5 h-5 text-gray-600 transition-transform" />
+                    )}    
+                </button>
+                
+                {expandedFaq === index && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    className="px-6 py-0 bg-purple-50 border-t border-gray-200"
+                  >
+                    <p className="text-gray-600 text-sm w-150">{faq.answer} </p>
+                  </motion.div>
+                )}
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+
+      {/* Send Packages Section */}
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={containerVariants}
+        className="py-40 bg-green-50"
+      >
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-4">
+            Send Packages
+          </motion.h2>
+          <motion.p variants={itemVariants} className="text-gray-600 mb-8">
+            Need to send something fast? Yspace delivers documents, gifts, and parcels to any location — securely and
+            without delay.
+          </motion.p>
+          <motion.div variants={itemVariants}>
+            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg">Start Today</Button>
+          </motion.div>
+        </div>
+      </motion.section>
+
+      <Footer />
+    </div>
+  )
+}
