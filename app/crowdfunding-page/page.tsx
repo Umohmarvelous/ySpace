@@ -111,7 +111,7 @@ export default function CrowdfundingPage() {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
           >
-            Join Us in Building Africa's Drone Delivery Future
+            Join Us in Building Africans Drone Delivery Future
           </motion.h1>
 
           <motion.p
@@ -197,7 +197,7 @@ export default function CrowdfundingPage() {
             viewport={{ once: true }}
             className="text-gray-600 text-lg leading-relaxed"
           >
-            We're on a mission to make drone delivery accessible to every business and home. Your contribution helps us
+            We are on a mission to make drone delivery accessible to every business and home. Your contribution helps us
             expand our drone fleet, build smarter delivery hubs, and bring reliable service to more communities across
             Africa.
           </motion.p>

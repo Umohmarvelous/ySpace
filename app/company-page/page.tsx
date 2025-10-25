@@ -81,7 +81,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg text-gray-600 max-w-2xl"
           >
-            We're building a passionate team of engineers, designers, and changemakers shaping how goods move across
+            We aregit building a passionate team of engineers, designers, and changemakers shaping how goods move across
             Africa — faster, cleaner, and smarter.
           </motion.p>
         </div>
@@ -126,7 +126,7 @@ export default function CompanyPage() {
             Working at yspace
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-600 text-center mb-12">
-            We're part of a global culture
+            We are part of a global culture
           </motion.p>
 
           <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8">
