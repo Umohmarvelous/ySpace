@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { ChevronDown, ChevronUp, MinusIcon, PlusIcon } from "lucide-react"
+import { MinusIcon, PlusIcon } from "lucide-react"
 import { useState } from "react"
 
 export default function ServicesPage() {
