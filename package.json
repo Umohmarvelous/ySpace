@@ -6,12 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "postinstall": "npm rebuild lightningcss"
-  },
-  "overrides": {
-    "lightningcss": "1.27.0",
-    "lightningcss-napi": "1.24.1"
+    "lint": "eslint"
   },
   "dependencies": {
     "@radix-ui/react-aspect-ratio": "^1.1.7",
@@ -41,13 +36,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "^10.4.21",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "15.5.3",
-    "parcel": "^2.16.0",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.18",
-    "tw-animate-css": "^1.4.0",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.17",
     "typescript": "^5"
   }
 }

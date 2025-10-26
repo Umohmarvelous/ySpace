@@ -94,42 +94,44 @@ export default function ServicesPage() {
             Shop on Marketplace
           </motion.h2>
 
-{/* grid grid-col-1 md:grid-col-1  */}
-
-          <motion.div variants={itemVariants} className="bg-teal-700 rounded-3xl p-12 text-white overflow-hidden ">
+          <motion.div variants={itemVariants} className="bg-teal-700 rounded-3xl p-12 text-white overflow-hidden">
             <div className="w-full flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
+                className="w-full mb-6"
               >
-                <div className="flex gap-3 mb-[-20px] zIndex-1 flex-wrap">
+                <div className="flex gap-3 flex-wrap justify-center">
                   {["Food & Groceries", "Electronics", "Fashion & Beauty", "Health & Wellness"].map((cat) => (
                     <span key={cat} className="bg-white/20 px-4 py-2 rounded-full text-sm">
                       {cat}
                     </span>
                   ))}
-                </div>  
+                </div>
               </motion.div>
 
-              <div className=" w-auto flex flex-col md:flex-row items-end justify-center">
+              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8">
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="flex flex-row space-between "
+                  className="flex-shrink-0"
                 >
-                <img src="/shopping-cart-groceries.jpg" alt="picture showing a shopping cart" className="index-2 w-150 h-150 rounded-2xl border-1" />
-                  
-                <p className="text-lg leading-relaxed  flex self-end align-self-baseline p-10">
+                  <img
+                    src="/shopping-cart-groceries.jpg"
+                    alt="picture showing a shopping cart"
+                    className="w-full md:w-96 h-auto rounded-2xl border border-white/20"
+                  />
+                </motion.div>
+
+                <p className="text-lg leading-relaxed max-w-2xl">
                   Get your daily essentials and favorite meals delivered faster than ever. From fresh produce to
                   ready-to-eat dishes, Yspace connects you to trusted local vendors and delivers straight to your
                   doorstep — fresh, fast, and right on time.
                 </p>
-                </motion.div>
-
               </div>
             </div>
           </motion.div>
@@ -142,50 +144,52 @@ export default function ServicesPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="py-30 bg-gray-50"
+        className="py-20 bg-gray-50"
       >
-        <div className="max-w-6xl mx-auto px-6 flex justify-between flex-row items-start">
-          <div className="flex flex-col ">
-            <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-2 flex self-start align-start">
-              FAQs
-            </motion.h2>
-            <motion.p variants={itemVariants} className="text-gray-600 mb-12">
-              Everything You Need to Know
-            </motion.p>
-          </div>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
+            <div className="flex flex-col">
+              <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-2">
+                FAQs
+              </motion.h2>
+              <motion.p variants={itemVariants} className="text-gray-600">
+                Everything You Need to Know
+              </motion.p>
+            </div>
 
-          <motion.div variants={containerVariants} className="space-y-4 ">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-white rounded-lg border border-gray-200 overflow-hidden w-150"
-              >
-                <button
-                  onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition"
+            <motion.div variants={containerVariants} className="flex-1 space-y-4 w-full md:max-w-2xl">
+              {faqs.map((faq, index) => (
+                <motion.div
+                  key={index}
+                  variants={itemVariants}
+                  className="bg-white rounded-lg border border-gray-200 overflow-hidden"
                 >
-                  <span className="font-semibold text-gray-900 text-left">{faq.question}</span> 
-                    {expandedFaq === index ? (
-                        <MinusIcon/>
-                    ) : (
-                        <PlusIcon className="w-5 h-5 text-gray-600 transition-transform" />
-                    )}    
-                </button>
-                
-                {expandedFaq === index && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    className="px-6 py-0 bg-purple-50 border-t border-gray-200"
+                  <button
+                    onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition text-left"
                   >
-                    <p className="text-gray-600 text-sm w-150">{faq.answer} </p>
-                  </motion.div>
-                )}
-              </motion.div>
-            ))}
-          </motion.div>
+                    <span className="font-semibold text-gray-900">{faq.question}</span>
+                    {expandedFaq === index ? (
+                      <MinusIcon className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                    ) : (
+                      <PlusIcon className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                    )}
+                  </button>
+
+                  {expandedFaq === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="px-6 pb-4 bg-purple-50 border-t border-gray-200"
+                    >
+                      <p className="text-gray-600 text-sm">{faq.answer}</p>
+                    </motion.div>
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </motion.section>
 
@@ -195,7 +199,7 @@ export default function ServicesPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="py-40 bg-green-50"
+        className="py-20 bg-green-50"
       >
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-4">

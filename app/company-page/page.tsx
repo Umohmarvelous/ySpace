@@ -81,7 +81,7 @@ export default function CompanyPage() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-lg text-gray-600 max-w-2xl"
           >
-            We aregit building a passionate team of engineers, designers, and changemakers shaping how goods move across
+            We are building a passionate team of engineers, designers, and changemakers shaping how goods move across
             Africa — faster, cleaner, and smarter.
           </motion.p>
         </div>

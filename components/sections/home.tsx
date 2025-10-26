@@ -57,8 +57,8 @@ export default function HomeSection() {
       className="py-20 bg-purple-900 text-white"
     >
       <div className="max-w-7xl mx-auto px-6">
-        <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold mb-16 leading-tight">
-          Our values guide everything we do.
+        <motion.h2 variants={itemVariants} className="border-2 border-red-400 text-4xl md:text-5xl font-bold mb-16 leading-tight">
+          Our values guide everything we do.m
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
