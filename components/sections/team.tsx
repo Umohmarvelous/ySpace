@@ -55,7 +55,7 @@ export default function TeamSection() {
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {team.map((member, index) => (
+          {team.map((member) => (
             <motion.div key={member.name} variants={itemVariants} className="text-center">
               <motion.div
                 whileHover={{ scale: 1.05 }}

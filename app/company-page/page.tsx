@@ -1,197 +1,143 @@
 "use client"
+import TeamMemberComponent from "@/components/team-member"
 
-import { motion } from "framer-motion"
-import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
+interface Value {
+  title: string
+  description: string
+}
+
+const values: Value[] = [
+  {
+    title: "Innovation",
+    description:
+      "At Yspace, innovation isn't just about building drones — it's about transforming how people and businesses access goods and services. We're pioneering new delivery solutions that make commerce more accessible, faster, and more sustainable.",
+  },
+  {
+    title: "Trust",
+    description:
+      "Trust is the foundation of everything we do. We're committed to safe, reliable, and transparent service that our customers and partners can depend on.",
+  },
+  {
+    title: "Community",
+    description:
+      "We believe in building strong connections between businesses and customers. By supporting local merchants and connecting communities, we're creating economic opportunities across Africa.",
+  },
+  {
+    title: "Sustainability",
+    description:
+      "Drone delivery is cleaner and more efficient than traditional logistics. We're committed to reducing our environmental impact while building a sustainable future for delivery.",
+  },
+]
+
+const team = [
+  {
+    name: "Joshua Olaiya",
+    role: "Founder, CEO & Chairman",
+    image: "/professional-man-headshot.png",
+  },
+  {
+    name: "Umoh Marvelous Sunday",
+    role: "Co-Founder & CTO",
+    image: "/professional-man-headshot.png",
+  },
+  {
+    name: "Lynda Obitolo",
+    role: "UI/UX Designer",
+    image: "/professional-woman-headshot.png",
+  },
+]
 
 export default function CompanyPage() {
-  const benefits = [
-    {
-      title: "Flexible Work Environment",
-      description: "We provide healthy work-life balance with options for remote work and flexible hours.",
-    },
-    {
-      title: "Supportive Team Culture",
-      description: "We work to build an inclusive environment where every voice is heard and valued.",
-    },
-    {
-      title: "Accelerate Clear Growth",
-      description: "Yspace offers opportunities to grow your career with well-defined paths where needed.",
-    },
-    {
-      title: "Comprehensive Benefits Package",
-      description: "Receive competitive compensation, comprehensive health coverage, and a range of vacation perks.",
-    },
-  ]
-
-  const jobs = [
-    {
-      title: "Drone Software Engineer",
-      location: "Lagos (Remote)",
-    },
-    {
-      title: "Marketing Executive",
-      location: "Lagos (Onsite)",
-    },
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  }
-
   return (
-    <div className="bg-white">
-      <Navigation />
-
-      {/* Header */}
-      <motion.section
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="pt-32 pb-12 bg-white"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6"
-          >
-            Careers.
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-lg text-gray-600 max-w-2xl"
-          >
-            We are building a passionate team of engineers, designers, and changemakers shaping how goods move across
-            Africa — faster, cleaner, and smarter.
-          </motion.p>
+    <main className="w-full">
+      {/* Hero Section */}
+      <section className="py-12 md:py-10 mt-40 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto flex flex-row justify-between">
+          <div className="w-500">
+            <p className="text-purple-600 font-semibold mb-2 text-sm md:text-base">About Yspace</p>
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-gray-900">
+              Building Nigerias first indigenous drone delivery company
+            </h1>
+          </div>
+          <div className="w-50 pl-60 flex flex-col self-center">
+            <div>
+              <p className="text-gray-600 mb-4 text-sm md:text-[13px] leading-relaxed">
+                At Yspace, we are reimagining how goods move — combining drone delivery, e-commerce and smart logistics
+                into one seamless experience. Whether for businesses or individuals, Yspace is building Africas first
+                drone-powered delivery platform.
+              </p>
+            </div>
+            <div>
+              <p className="text-gray-600 text-sm md:text-[13px] leading-relaxed">
+                We believe technology should empower people. That is why we are building Africas most innovative delivery
+                and commerce platform — connecting businesses directly to their customers through innovation, trust,
+                community, and sustainability.
+              </p>
+            </div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Team Images */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="py-12 bg-white"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div variants={itemVariants} className="md:col-span-2 rounded-2xl overflow-hidden h-96">
-              <img src="/collaborative-teamwork.png" alt="Team" className="w-full h-full object-cover" />
-            </motion.div>
-            <motion.div variants={itemVariants} className="rounded-2xl overflow-hidden h-96">
-              <img src="/team-collaboration.png" alt="Team" className="w-full h-full object-cover" />
-            </motion.div>
-            <motion.div variants={itemVariants} className="rounded-2xl overflow-hidden h-96">
-              <img src="/modern-office-workspace.png" alt="Office" className="w-full h-full object-cover" />
-            </motion.div>
-            <motion.div variants={itemVariants} className="md:col-span-2 rounded-2xl overflow-hidden h-96">
-              <img src="/diverse-team-meeting.png" alt="Team" className="w-full h-full object-cover" />
-            </motion.div>
-          </motion.div>
+      {/* Partners Section */}
+      <section className="py-12 md:py-40 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12 text-gray-900">Customers & Partners</h2>
+          <div className="flex justify-center items-center">
+            <div className="w-132 h-16 bg-white rounded-lg flex items-center justify-center border border-gray-200">
+              <img src="/t-motor.png" alt="picture showing a partnership logo" className="bg-transparent w-100 h-100" />
+            </div>
+          </div>
         </div>
-      </motion.section>
+      </section>
 
-      {/* Working at Yspace */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="py-20 bg-gray-50"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-4 text-center">
-            Working at yspace
-          </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-600 text-center mb-12">
-            We are part of a global culture
-          </motion.p>
+      {/* Values Section */}
+      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-purple-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Our values guide everything we do.</h2>
 
-          <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-white rounded-2xl p-8 border border-gray-200"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
-
-      {/* Open Positions */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="py-20 bg-white"
-      >
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-4 text-center">
-            Open positions available
-          </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-600 text-center mb-12">
-            Join us for exciting opportunities in a team that values growth and innovation
-          </motion.p>
-
-          <motion.div variants={itemVariants} className="flex justify-center gap-4 mb-12">
-            {["All", "Development", "Design", "Marketing"].map((cat) => (
-              <button
-                key={cat}
-                className={`px-6 py-2 rounded-full transition ${
-                  cat === "All" ? "bg-purple-600 text-white" : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </motion.div>
-
-          <motion.div variants={containerVariants} className="space-y-4">
-            {jobs.map((job, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="bg-white border border-gray-200 rounded-lg p-6 flex items-center justify-between hover:shadow-lg transition"
-              >
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900">{job.title}</h3>
-                  <p className="text-gray-600 text-sm">{job.location}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mt-12 md:mt-16">
+            {/* Values List */}
+            <div className="space-y-8">
+              {values.map((value, index) => (
+                <div key={index}>
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-3">
+                    <span className="text-purple-400">✦</span>
+                    {value.title}
+                  </h3>
                 </div>
-                <button className="text-purple-600 font-semibold hover:text-purple-700 transition">Apply Now</button>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
+              ))}
+            </div>
 
-      <Footer />
-    </div>
+            {/* Values Description */}
+            <div className="bg-purple-100 text-gray-900 rounded-lg p-8 flex items-center">
+              <div>
+                <div className="text-3xl mb-4">★</div>
+                <p className="text-sm md:text-base leading-relaxed">
+                  At Yspace, innovation is not just about building drones — it is about transforming how people and
+                  businesses access goods and services. We are pioneering new delivery solutions that make commerce more
+                  accessible, faster, and more sustainable. By combining cutting-edge technology with a commitment to
+                  community, we are building the future of delivery in Africa.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900">Meet the Team</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            {team.map((member, index) => (
+              <TeamMemberComponent key={index} name={member.name} role={member.role} image={member.image} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+    
+    </main>
   )
 }

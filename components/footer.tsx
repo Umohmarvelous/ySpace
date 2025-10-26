@@ -89,7 +89,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-white transition">
+                <Link href="/career-page" className="hover:text-white transition">
                   Careers
                 </Link>
               </li>
@@ -99,7 +99,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-white transition">
+                <Link href="/blog-page" className="hover:text-white transition">
                   Blog
                 </Link>
               </li>

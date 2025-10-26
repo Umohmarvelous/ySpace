@@ -3,7 +3,6 @@
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
-import { Button } from "@/components/ui/button"
 
 export default function VendorsPage() {
   return (
@@ -34,8 +33,12 @@ export default function VendorsPage() {
             <p className="text-xl mb-8">
               Join the future of delivery — connect your business to customers through drone-powered logistics.
             </p>
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg">Become a Vendor</Button>
-          </motion.div>
+              <button 
+                // onClick={onPrimaryClick}
+                className="px-6 md:px-8 py-3 md:py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+                Become a Vendor
+              </button>          
+            </motion.div>
         </div>
 
         <motion.div

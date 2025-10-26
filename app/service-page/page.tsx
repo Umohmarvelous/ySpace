@@ -72,10 +72,18 @@ export default function ServicesPage() {
               Shop from trusted vendors or send packages fast with drone delivery.
             </p>
             <div className="flex gap-4">
-              <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg">
-                Shop on Marketplace
-              </Button>
-              <Button className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-6 text-lg">Send a Package</Button>
+            
+              <button 
+                // onClick={onPrimaryClick}
+                className="px-6 md:px-8 py-3 md:py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+                Shop on a marketplace
+              </button>
+                     
+              <button
+                  // onClick={onSecondaryClick()}
+                  className="px-6 md:px-8 py-3 md:py-4 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-lg transition-colors border border-white/50">
+                Send a Package
+              </button>   
             </div>
           </motion.div>
         </div>
