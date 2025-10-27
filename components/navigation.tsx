@@ -50,7 +50,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { ChevronDown, Menu, ShoppingBasket, ShoppingCart, Store, X } from "lucide-react"
+import { ChevronDown, Menu, ShoppingCart, X } from "lucide-react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
