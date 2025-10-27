@@ -3,20 +3,33 @@ import type { JSX } from "react"
 
 interface TeamMemberProps {
   name: string
-  role: string
+  position: string
   image?: string
+  specality: string[]
 }
 
-export default function TeamMember({ name, role, image }: TeamMemberProps): JSX.Element {
+interface Member {
+  team : TeamMemberProps
+}
+export default function TeamMember({ team }: Member): JSX.Element {
   return (
-    <div className="text-center">
-      {image && (
-        <div className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-4 rounded-lg overflow-hidden">
-          <Image src={image || "/placeholder.svg"} alt={name} fill className="object-cover" />
+    <div className="text-center w-fit">
+      {team.image && (
+        <div className="mx-0 relative mb-4 overflow-hidden w-80 h-80">
+          <Image src={team.image || "/placeholder.svg"} alt={team.name} width={300} height={300} className="object-cover  rounded-2xl w-72 h-full" />
         </div>
       )}
-      <h3 className="text-lg md:text-xl font-bold text-gray-900">{name}</h3>
-      <p className="text-gray-600 text-sm md:text-base">{role}</p>
+      <div className="text-left md:text-left">
+        <h3 className="text-2xl md:text-2xl font-bold text-gray-100 m-0 p-0">{team.name}</h3>
+        <p className="text-gray-500 text-md md:text-md italic ">{team.position}</p>
+      </div>
+      
+
+      <ul className="flex align-start flex-col text-left mt-3">
+        {team.specality.map((item, index) => (
+          <li key={index} className=" text-gray-600 "> - {item}</li>
+        ))}
+      </ul>
     </div>
   )
 }

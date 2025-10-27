@@ -52,27 +52,27 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Links</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/services" className="hover:text-white transition">
+                <Link href="/services-page" className="hover:text-white transition">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/technology" className="hover:text-white transition">
+                <Link href="/technology-page" className="hover:text-white transition">
                   Technology
                 </Link>
               </li>
               <li>
-                <Link href="/vendors" className="hover:text-white transition">
+                <Link href="/vendor-page" className="hover:text-white transition">
                   Vendors
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-white transition">
+                <Link href="/crowdfunding-page" className="hover:text-white transition">
                   Crowdfunding
                 </Link>
               </li>
               <li>
-                <Link href="/company" className="hover:text-white transition">
+                <Link href="/company-page" className="hover:text-white transition">
                   Company
                 </Link>
               </li>
@@ -94,7 +94,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-white transition">
+                <Link href="/components/faq-item.tsx" className="hover:text-white transition">
                   FAQs
                 </Link>
               </li>

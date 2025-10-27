@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import Image from "next/image"
 
 export default function CareerPage() {
   const benefits = [
@@ -95,20 +96,19 @@ export default function CareerPage() {
         variants={containerVariants}
         className="py-12 bg-white"
       >
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <motion.div variants={itemVariants} className="md:col-span-2 rounded-2xl overflow-hidden h-96">
-              <img src="/collaborative-teamwork.png" alt="Team" className="w-full h-full object-cover" />
-            </motion.div>
-            <motion.div variants={itemVariants} className="rounded-2xl overflow-hidden h-96">
-              <img src="/team-collaboration.png" alt="Team" className="w-full h-full object-cover" />
-            </motion.div>
-            <motion.div variants={itemVariants} className="rounded-2xl overflow-hidden h-96">
-              <img src="/modern-office-workspace.png" alt="Office" className="w-full h-full object-cover" />
-            </motion.div>
-            <motion.div variants={itemVariants} className="md:col-span-2 rounded-2xl overflow-hidden h-96">
-              <img src="/diverse-team-meeting.png" alt="Team" className="w-full h-full object-cover" />
-            </motion.div>
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="md:col-span-2 rounded-2xl overflow-hidden h-100">
+                <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
+            </div>
+            <div className="flex flex-col space-y-10">
+              <div className="rounded-2xl overflow-hidden h-96">
+                  <Image src="/peoplegathering2.png" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />            
+              </div>
+              <div className="rounded-2xl overflow-hidden h-96">
+                  <Image src="/peoplegathering3.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />            
+              </div>
+            </div>
           </motion.div>
         </div>
       </motion.section>
@@ -129,14 +129,14 @@ export default function CareerPage() {
             We are part of a global culture
           </motion.p>
 
-          <motion.div variants={containerVariants} className=" grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div variants={containerVariants} className=" grid grid-cols-1 md:grid-cols-2 gap-8 hover:text-white transition">
             {benefits.map((benefit, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 className="bg-white rounded-2xl p-8 border border-gray-700 py-20 hover:bg-black hover:shadow-lg transition"
               >
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-gray-500 ">{benefit.title}</h3>
                 <p className="text-gray-600">{benefit.description}</p>
               </motion.div>
             ))}
