@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import Image from "next/image"
 
 export default function VendorsPage() {
   return (
@@ -17,7 +18,7 @@ export default function VendorsPage() {
         className="relative min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-24 flex items-center overflow-hidden"
       >
         <div className="absolute inset-0 opacity-30">
-          <img src="/vibrant-urban-cityscape.png" alt="background" className="w-full h-full object-cover" />
+            <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
@@ -47,7 +48,7 @@ export default function VendorsPage() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-96"
         >
-          <img src="/drone-delivery-package.jpg" alt="Drone" className="w-full h-full object-contain" />
+          <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
         </motion.div>
       </motion.section>
 

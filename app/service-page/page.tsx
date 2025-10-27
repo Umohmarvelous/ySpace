@@ -6,6 +6,7 @@ import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 export default function ServicesPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
@@ -58,7 +59,7 @@ export default function ServicesPage() {
         className="relative min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-24 flex items-center overflow-hidden"
       >
         <div className="absolute inset-0 opacity-20">
-          <img src="/drone-delivery-background.jpg" alt="background" className="w-full h-full object-cover" />
+          <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
@@ -128,7 +129,7 @@ export default function ServicesPage() {
                   transition={{ duration: 0.6, delay: 0.2 }}
                   className="flex-shrink-0"
                 >
-                  <img
+                  <Image
                     src="/shopping-cart-groceries.jpg"
                     alt="picture showing a shopping cart"
                     className="w-full md:w-96 h-auto rounded-2xl border border-white/20"

@@ -43,16 +43,16 @@ const values: Value[] = [
 const teamMembers = [
   {
     name: "Joshua Olaiya",
-    position: "Founder, CEO & Chairman",
+    position: "Founder, CEO & Chairman of the board",
     image: "/joshua.png",
     specality:["Robotics Engineer","Tech Instructor","Product Development/Engineer"],
   },
     
 
   {
-    name: "Marvelous Sunday",
-    position: "Co-Founder & CSO",
-    image: "/marvelous.jpg",
+    name: "Unknown",
+    position: "Co-Founder & Chief Software Officer (CSO)",
+    image: "/unknown.jpg",
     specality:[
           "Software Engineer.",
           "Tech Instructor.",
@@ -90,14 +90,14 @@ export default function CompanyPage() {
         {/* Hero Section */}
 
       <section className="py-12 md:py-10 mt-10 lg:mt-40 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between">
-          <div className="w-600 mb-20 lg:mb-0 text-center lg:text-left">
-            <p className="text-purple-600 font-semibold mb-2 text-sm md:text-base">About Yspace</p>
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row md:justify-between">
+          <div className="w-full lg:w-[200%] mb-20 lg:mb-0 text-center lg:text-left">
+            <p className="text-[#A2A4A7] font-semibold mb-4 text-sm md:text-base">About Yspace</p>
             <h1 className="text-3xl md:text-5xl font-bold mb-6 md:mb-8 text-gray-900 mx-30 sm:mx-20 lg:mx-0">
               Building Nigerias first indigenous drone delivery company
             </h1>
           </div>
-          <div className="w-50 lg:w-auto pl-0 lg:pl-60 flex flex-col self-center text-center lg:text-left mx-30 sm:mx-40 lg:mx-0">
+          <div className="w-[90%] lg:w-auto pl-0 lg:pl-50 flex flex-col self-center sm:text-center md:text-justify -mt-12 lg:mt-14 mx-30 sm:mx-40 lg:mx-0">
             <div>
               <p className="text-gray-600 mb-4 text-sm md:text-base leading-relaxed">
                 {"At ySpace, we're reimagining how goods move — combining drone delivery, e-commerce and smart logistics into one seamless experience. Whether for businesses or individuals, ySpace is building Africa's first drone-powered delivery platform."}
@@ -128,21 +128,22 @@ export default function CompanyPage() {
       {/* Values Section */}
       <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-purple-900 text-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Our values guide everything we do.</h2>
-
+          <h2 className="text-4xl md:text-4xl font-bold text-center md:text-left w-50 md:w-96">Our values guide everything we do.</h2>
           <div className="flex flex-col md:flex-row justify-between space-x-10 mt-12 md:mt-16">
             {/* Values List */}
-            <div className="space-y-8 md:flex grid grid-row-3  md:flex-col">
+            <div className="space-y-6 md:flex grid grid-row-3 md:flex-col">
               {values.map((value, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedValueIndex(index)}
                   className={`text-left transition-all ${
-                    selectedValueIndex === index ? "opacity-100" : "opacity-70 hover:opacity-85"
+                    selectedValueIndex === index ? "opacity-100 text-[#1BB1A3]" : " opacity-70 hover:opacity-85"
                   }`}
                 >
                   <h3 className="text-xl font-bold mb-2 flex items-center gap-3">
-                    <span className="text-purple-400">✦</span>
+                    <span className={`text-left transition-all text-[12px] ${
+                    selectedValueIndex === index ? "text-[12px] opacity-100 text-[#1BB1A3]" : "opacity-70 hover:opacity-85"
+                  }`}>0{index + 1}</span>
                     {value.title}
                   </h3>
                 </button>
@@ -152,7 +153,7 @@ export default function CompanyPage() {
             {/* Values Description */}
             <div className="bg-purple-100 text-gray-900 rounded-lg p-8 flex items-center w-50 md:w-[50%]">
               <div>
-                <div className="text-3xl mb-4">★</div>
+                <div className="text-3xl mb-4 text-[#116B62]">★</div>
                 <p className="text-sm md:text-base leading-relaxed">{values[selectedValueIndex].description}</p>
               </div>
             </div>
@@ -162,26 +163,31 @@ export default function CompanyPage() {
 
 
       {/* FounderBio Section */}
-      <section className="flex flex-col items-center py-12 md:py-3 mt-2 ">
+      <section className="flex flex-col bg-white items-center py-12 md:py-3 mt-2 ">
            <div className="py-16 px-4 sm:px-6 lg:px-20 max-w-7xl mx-auto">
+             <h1 className="text-black text-3xl font-bold mb-10">About the Founder</h1>
              {founderBio.map((data, index) => (
               <div key={index} className="mb-12 text-justify md:text-justify flex flex-col md:flex-row justify-between items-center sm:items-center space-x-0 md:space-x-0 lg:space-x-10">
                 <div className="flex flex-col items-left md:self-start ">
                   <div className="w-80 sm:w-96 h-96 rounded-3xl">
-                    <Image src={data.image} alt={data.name} width={800} height={800} className="object-cover w-98 h-98" />
+                    <Image src={data.image} alt={data.name} width={800} height={800} className="object-cover w-98 h-98 transform scale-x-[-1]" />
                   </div>
                 </div>
 
                 <ul className="w-30 sm:w-84 md:w-fit px-5 sm:px-10 lg:px-0 flex self-start flex-col">
-                  <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-start space-x-2 mb-5 mt-0 sm:mt-5 md:mt-0">
+                  <div className="flex flex-col items-left justify-left sm:justify-start space-x-2 mb-5 mt-0 sm:mt-5 md:mt-0">
                     <h3 className="text-2xl font-bold text-gray-900">{data.name}</h3>
-                    <p className="text-gray-800 px-1 bg-transparent sm:bg-green-300 rounded-sm text-center self-center">{data.position}</p>
+                    <p className="text-gray-800 rounded-sm text-left self-left">{data.position}</p>
                   </div>
-                  <li className="text-gray-600 mb-4 text-sm">{data.background}</li>
+                  <li className="text-gray-600 mb-4 text-sm">Background: 
+                  <span>
+                    {data.background}
+                  </span>
+                  </li>
                   <li key={index} className="text-gray-900 mb-4">Role: 
-                    <p className="text-gray-600 mb-4 ml-3">
+                    <span className="text-gray-600 mb-4 ml-3">
                       - {data.role}
-                    </p>
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -190,8 +196,8 @@ export default function CompanyPage() {
           {/* Team section */}
           <div className="bg-black w-full py-16 items-center justify-start">
             <div className="flex flex-col justify-space-between mx-auto items-center ">
-              <h2 className="text-3xl md:text-4xl font-bold flex self-start text-start mb-7 md:mb-7 md:mt-7 text-gray-100 ml-32">Our Team</h2>
-              <div className="flex flex-col md:flex-row items-start flex-wrap space-x-0 md:space-x-40 space-y-10 md:space-y-0">
+              <h2 className="text-3xl md:text-4xl font-bold flex self-center text-start mb-7 md:mb-10 md:mt-7 text-gray-100 ">Our Team</h2>
+              <div className="flex flex-col md:flex-row items-start flex-wrap space-x-0 md:space-x-5 space-y-10 md:space-y-0">
                 {teamMembers.map((member, index) => (
                   <TeamMemberComponent key={index} team={member} />
                 ))}

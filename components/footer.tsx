@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { Facebook, Linkedin, Twitter, Youtube, Instagram } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   const containerVariants = {
@@ -36,7 +37,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-20 flex flex-row justify-between space-x-4">
         <motion.div variants={itemVariants}>
           <h3 className="text-lg font-bold mb-4">
-            <img src="/Logo white.png" alt="picture showing a shopping cart" className="bg-transparent w-30 h-12" />
+            <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
           </h3>
         </motion.div>
 
@@ -84,7 +85,7 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">More</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
-                <Link href="/" className="hover:text-white transition">
+                <Link href="/contact-page" className="hover:text-white transition">
                   Contact Us
                 </Link>
               </li>

@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 export default function BlogPage() {
   const posts = [
@@ -101,7 +102,7 @@ export default function BlogPage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                <img src="/workers-drone-sunset.jpg" alt="Featured" className="w-full rounded-2xl" />
+                <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
               </motion.div>
             </div>
           </motion.div>
@@ -126,7 +127,7 @@ export default function BlogPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition"
               >
-                <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-48 object-cover" />
+                <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h3>
                   <p className="text-gray-600 mb-4">{post.description}</p>

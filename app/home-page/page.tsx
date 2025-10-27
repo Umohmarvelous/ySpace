@@ -5,6 +5,7 @@ import FeatureCard from "@/components/feature-card"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { MinusIcon, PlusIcon } from "lucide-react"
+import Image from "next/image"
 
 
 
@@ -84,7 +85,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       <HeroSection
         title="Shop locally. Get it delivered Instantly"
         subtitle="From food to gadgets and more, we deliver what you need when you need it — fast, safe, and reliable."
-        backgroundImage="/public/drone-beach.jpg"
+        backgroundImage="/shop_instantly.png"
       />
 
       {/* Features Section */}
@@ -95,21 +96,21 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
             Experience the future of delivery with our cutting-edge drone technology
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className=" grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <FeatureCard
               title="Shop on Marketplace"
               description="Discover thousands of products from local merchants and order what you need instantly."
-              image="/online-shopping-marketplace.jpg"
+              backgroundImage="/shop_on_marketplace.png"
             />
             <FeatureCard
               title="Send Packages Instantly"
               description="Need to send something? Our drones can pick it up and deliver it across the city in minutes."
-              image="/package-delivery-drone.jpg"
+              backgroundImage="/send_packages_instantly.png"
             />
             <FeatureCard
               title="Partner your Business"
               description="Grow your business with our delivery network. Reach more customers faster than ever before."
-              image="/business-partnership-delivery.jpg"
+              backgroundImage="/patner_your_business.png"
             />
           </div>
         </div>
@@ -266,13 +267,14 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
       {/* Future Plans Section */}
       <section
-        className="relative py-16 md:py-60 px-4 sm:px-6 lg:px-8 text-white text-center"
+        className="relative py-8 md:py-60 px-4 sm:px-6 lg:px-8 text-white text-center"
         style={{
-          backgroundImage: "/future-drone-delivery-technology.jpg",
+          backgroundImage: "/our_future_plan.png",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
+        <Image src="/our_future_plan.png" layout="fill" objectFit="cover" alt="Our Future Plans" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Future Plans</h2>
@@ -287,16 +289,45 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       </section>
 
       {/* Support Section */}
-      <section className="py-12 md:py-60 px-4 sm:px-6 lg:px-8 bg-yellow-50">
+      <section className="py-12 md:py-46 px-4 sm:px-6 lg:px-8 bg-yellow-50">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Support the Future of Delivery</h2>
           <p className="text-gray-600 mb-8 text-sm md:text-base">
             Yspace is building Africans first drone-powered e-commerce and logistics network — and you can be part of
             it. We are raising funds to expand our fleet, onboard more merchants, and reach more cities.
           </p>
-          <button className="px-6 md:px-8 py-3 md:py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
-            Donate
-          </button>
+            {/* Progress Bar */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="bg-gray-900 rounded-lg p-6 mt-20 flex items-center justify-between max-w-lg mx-auto"
+            >
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+                    <Image src="/box-usd 1.png" width={300} height={300} alt="picture showing a donation icon" className="w-6 h-6 object-fill text-white" />
+                  </div>
+                  <div className="flex items-start flex-col justify-between space-y-6">
+                    <div className="text-white font-extralight flex self-start justify-start">$10 raised of $50,000 goal</div>
+                    <div className="w-64 h-2 bg-gray-700 rounded-full mt-2 overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "10%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 3, delay: 0.8 }}
+                        className="h-full bg-white"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-[#9900E8] hover:bg-purple-700 text-white font-bold py-3 px-8 rounded transition"
+                >
+                  Donate
+                </motion.button>
+             </motion.div>
         </div>
       </section>
     </main>

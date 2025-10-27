@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import Image from "next/image"
 
 export default function TechnologyPage() {
   const features = [
@@ -82,7 +83,7 @@ export default function TechnologyPage() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-96"
         >
-          <img src="/drone-vtol-aircraft.jpg" alt="Drone" className="w-full h-full object-contain" />
+          <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
         </motion.div>
       </motion.section>
 
@@ -111,7 +112,7 @@ export default function TechnologyPage() {
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <img
+                  <Image
                     src={`/drone-feature-.jpg?height=300&width=300&query=drone feature ${index}`}
                     alt={feature.title}
                     className="w-full rounded-lg"

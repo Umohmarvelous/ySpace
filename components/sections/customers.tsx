@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 export default function CustomersSection() {
   return (
@@ -29,7 +30,7 @@ export default function CustomersSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="flex justify-center items-center"
         >
-          <img src="/motor-logo.jpg" alt="Motor" className="h-16" />
+          <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
         </motion.div>
       </div>
     </motion.section>

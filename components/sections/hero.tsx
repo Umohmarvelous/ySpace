@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function HeroSection() {
   return (
@@ -21,7 +22,7 @@ export default function HeroSection() {
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Sell Smarter. Deliver Faster with Yspace
             </h1>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-md text-gray-600 mb-8">
               Join the future of delivery — connect your business to customers through drone-powered logistics.
             </p>
             <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg rounded-lg">
@@ -35,10 +36,12 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative h-96"
           >
-            <img
+            <Image
               src="/drone-delivery-package.jpg"
               alt="Drone delivery"
               className="w-full h-full object-cover rounded-lg"
+              width={500}
+              height={500}
             />
           </motion.div>
         </div>

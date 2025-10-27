@@ -5,6 +5,7 @@ import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import { Play, Check } from "lucide-react"
 import { useState } from "react"
+import Image from "next/image"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -132,7 +133,7 @@ export default function CrowdfundingPage() {
             viewport={{ once: true }}
             className="relative w-full aspect-video bg-gray-800 rounded-2xl overflow-hidden mb-12"
           >
-            <img src="/drone-delivery-landscape.jpg" alt="Yspace story" className="w-full h-full object-cover" />
+                <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
             <div className="absolute inset-0 flex items-center justify-center bg-black/30">
               <motion.button
                 whileHover={{ scale: 1.1 }}
@@ -249,11 +250,14 @@ export default function CrowdfundingPage() {
                   <p className="text-gray-600">{area.description}</p>
                 </div>
                 <div className="flex-1">
-                  <img
-                    src={area.image || "/placeholder.svg"}
+                  <Image
+                    width={400}
+                    height={400}
+                    src="/peoplegathering1.jpg"
                     alt={area.title}
                     className="w-full h-64 object-cover rounded-xl"
                   />
+                  
                 </div>
               </motion.div>
             ))}
@@ -363,7 +367,6 @@ export default function CrowdfundingPage() {
         </div>
       </motion.section>
 
-      <Footer />
     </div>
   )
 }
