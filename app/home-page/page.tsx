@@ -342,7 +342,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
                   </div>
                   <div className="flex items-start flex-col justify-between space-y-6">
                     <div className="text-white font-extralight flex self-start justify-start">$10 raised of $50,000 goal</div>
-                    <div className="w-64 h-2 bg-gray-700 rounded-full mt-2 overflow-hidden">
+                    <div className="w-full` h-2 bg-gray-700 rounded-full mt-2 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: "10%" }}
