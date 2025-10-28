@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
 import { Play, Check } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
