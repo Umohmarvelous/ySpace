@@ -54,7 +54,7 @@ export default function Navigation() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md w-auto flex self-center justify-center mx-auto mt-10 pt-0 rounded-2xl sm:rounded-lg"
+      className=" top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md w-auto flex self-center justify-center mx-auto mt-10 pt-0 rounded-2xl sm:rounded-lg"
     >
     <nav className="w-full sticky top-0 z-50 bg-transparent">
       <div className="py-10 px-4 sm:px-6 lg:px-8 ">
