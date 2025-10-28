@@ -6,6 +6,7 @@ import { useState } from "react"
 import { motion } from "framer-motion"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import Image from "next/image"
+import CarretItemComponent from "@/components/carret"
 
 
 
@@ -18,7 +19,7 @@ const faqss: FAQ[] = [
   {
     question: "What is Yspace?",
     answer:
-      "Yspace is a drone-powered delivery e-commerce platform that connects local businesses and customers. You can shop, send packages, or partner your business - and we deliver it all instantly.",
+      "Yspace is a drone-powered delivery e-commerce platform that connects local businesses and customers. You can shop, send packages, or partner your business - and we deliver by drone straight to your doorstep."
   },
   {
     question: "How fast are deliveries?",
@@ -38,7 +39,7 @@ const faqss: FAQ[] = [
   {
     question: "Is drone delivery safe?",
     answer:
-      "Absolutely. Our drones follow strict flight and safety regulations, with secure packaging and real-time tracking to ensure your package arrives intact and on time.",
+      "Absolutely. Yspace drones follow strict flight and safety regulations, with secure packaging and real-time tracking for every delivery",
   },
   {
     question: "What happens if my delivery fails?",
@@ -50,6 +51,29 @@ const faqss: FAQ[] = [
     answer:
       "Yspace is currently operating in select cities across Nigeria. Check our website to see if we're available in your area.",
   },
+]
+
+const shopCart = [
+  {
+    title: "Food & Groceries",
+    label: "Shop household items, and other daily essentials from your trusted stores and supermarkets nearby.",
+    image:"/shopping_picture1.png",
+  },
+  {
+    title: "Food & Groceries",
+    label: "Shop household items, and other daily essentials from your trusted stores and supermarkets nearby.",
+    image:"/shopping_picture2.png",
+  },
+  {
+    title: "Electronics",
+    label: "Shop household items, and other daily essentials from your trusted stores and supermarkets nearby.",
+    image:"/shopping_picture1.png",
+  },
+  {
+    title: "Food & Groceries",
+    label: "Shop household items, and other daily essentials from your trusted stores and supermarkets nearby.",
+    image:"/shopping_picture2.png",
+  }
 ]
 
 export default function HomePage() {
@@ -84,124 +108,133 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       {/* Hero Section */}
       <HeroSection
         title="Shop locally. Get it delivered Instantly"
-        subtitle="From food to gadgets and more, we deliver what you need when you need it — fast, safe, and reliable."
+        subtitle="From food to gadgets and more, shop as a boss and get it delivered right to your doorstep- fast, and safe, all powered by drons. "
         backgroundImage="/shop_instantly.png"
       />
 
       {/* Features Section */}
-      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 md:py-30 px-4 sm:px-6 lg:px-8 bg-white mb-16">
+        <div className="flex items-center justify-center h-100 w-full my-12">
+          <Image src="/t-motor.png" width={1500} height={1500} alt="picture showing a donation icon" className="h-fit w-fit object-contain text-white flex items-center justify-center " />
+        </div>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">Only Top notch Solution.</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-1 mt-10 text-gray-900">Only Top notch Solution.</h2>
           <p className="text-center text-gray-600 mb-12 md:mb-16 text-sm md:text-base">
             Experience the future of delivery with our cutting-edge drone technology
           </p>
 
-          <div className=" grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-10 h-full  bg-transparent">
             <FeatureCard
               title="Shop on Marketplace"
-              description="Discover thousands of products from local merchants and order what you need instantly."
+              description="Discover local vendors, explor categories, and order what you need - from foom to tech. 
+              Delivered by Drone, right to your doorstep."
               backgroundImage="/shop_on_marketplace.png"
             />
             <FeatureCard
               title="Send Packages Instantly"
-              description="Need to send something? Our drones can pick it up and deliver it across the city in minutes."
+              description="Need to send something across town? 
+              Book a drone, drop it off, and track it live as it flies to the destination."
               backgroundImage="/send_packages_instantly.png"
             />
             <FeatureCard
               title="Partner your Business"
-              description="Grow your business with our delivery network. Reach more customers faster than ever before."
+              description="Join Yspace to reach more customers and get your products delivered by drone within minutes."
               backgroundImage="/patner_your_business.png"
             />
           </div>
         </div>
       </section>
 
-      {/* Categories Section */}
-      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
-            Any item at all, shop at Yspace.
-          </h2>
-          <p className="text-center text-gray-600 mb-12 md:mb-16 text-sm md:text-base">
-            From everyday essentials to specialty items, we have everything you need
-          </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {["Food & Groceries", "Electronics", "Fashion", "Home & Garden"].map((category: string) => (
-              <div key={category} className="bg-white rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
-                <div className="w-full h-32 md:h-40 bg-gray-200 rounded-lg mb-4" />
-                <h3 className="font-semibold text-gray-900">{category}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
+
+        {/* Categories Section */}
+      <section className="max-w-7xl mx-auto flex items-center flex-col">
+            <div className="flex flex-col items-center justify-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+                Any item at all, shop at Yspace.
+              </h2>
+              <p className="text-center text-gray-600 mb-12 md:mb-16 text-sm md:text-base">
+                From everyday essentials to specialty items, we have everything you need
+              </p>
+            </div>
+            <div className="flex flex-col md:flex-row items-start flex-wrap space-x-0 md:space-x-5 space-y-10 m-10 md:space-y-0 py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+              {shopCart.map((item, index) => (
+                <CarretItemComponent key={index} store={item} />
+              ))}
+            </div>
       </section>
 
       {/* How It Works Section */}
-      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-gray-900">How Yspace Works</h2>
+      <section className="py-2 md:py-2 px-4 lg:px-0 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center  text-gray-900">How Yspace Works</h2>
+          <p className="text-center text-gray-600 mb-6 md:mb-8 text-sm md:text-[15px] mt-4">
+            From order to doorstep - our drones make delivery seamless, fast, and reliable.
+          </p>
+          <div className="max-w-3xl mx-auto ">
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+
+
+            <div className="hidden md:flex flex-row relative top-[480px] left-0 right-0 bottom-0 rotate-90">
+              <div className="flex flex-row rounded-lg bg-gray-300 w-full h-1 relative">
+                <div className="rounded-lg  bg-purple-900 w-80 h-1 relative">
+                </div>
+                <div className="bg-purple-900 rounded-full relative right-3 bottom-[5px] rotate-60 w-4 h-4"></div>
+              </div>
+            </div>
+
+
+
             {/* Step 1 */}
-            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600 text-white font-bold">
-                  1
+            <div className=" my-12 flex flex-col md:flex-row gap-6 items-start md:items-center">
+              <div className="flex flex-col md:flex-row items-center justify-between w-full">
+                <div className="max-w-xl md:w-72 m-9 md:m-0 flex flex-col items-center md:items-start md:text-left text-justify justify-center">
+                  <h3 className="flex md:self-start text-xl font-bold text-gray-900 mb-5 md:mb-4">Shop or Send</h3>
+                  <p className="text-gray-600 text-sm md:text-[12px] text-center md:text-justify">
+                    Browse your favorite stores or send your own packages through the Yspace platform. Choose what you need, add it to your cart, or schedule a pickup
+                  </p>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Shop or Send</h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Browse our marketplace or schedule a package pickup. Choose what you need and add it to your cart.
-                </p>
+                <Image src="/shop_or_send.png" objectFit="contain" width={200} height={200} alt="Our Future Plans" className="w-100 h-100 "/>
               </div>
             </div>
-
             {/* Step 2 */}
-            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600 text-white font-bold">
-                  2
+            <div className=" flex flex-col items-start md:items-center">
+              <div className="flex flex-col md:flex-row-reverse items-center justify-between w-full">
+                <div className="md:my-32 max-w-xl md:w-72 m-9 md:m-0 flex flex-col items-center md:items-start text-justify justify-center pl-0 md:pl-12">
+                  <h3 className="flex md:self-start text-xl font-bold text-gray-900 mb-5 md:mb-4">Drone Takes Off</h3>
+                  <p className="text-gray-600 text-sm md:text-[12px] text-center md:text-justify">
+                    Once confirmed, the nearest drone is automatically dispatched. It picks up your order and flies the fastest route to your location.
+                  </p>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Drone Takes Off</h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Once confirmed, our nearest drone is automatically dispatched. It picks up your order and takes off.
-                </p>
+                <Image src="/drone_takes_off.png" objectFit="contain" width={200} height={200} alt="Our Future Plans" className="w-100 h-100"/>
               </div>
             </div>
-
             {/* Step 3 */}
-            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600 text-white font-bold">
-                  3
+            <div className="flex flex-col md:flex-row items-start md:items-center">
+              <div className="flex flex-col md:flex-row items-center justify-between w-full">
+                <div className="max-w-xl md:w-72 m-9 md:m-0 flex flex-col items-center md:items-start md:text-left text-justify justify-center">
+                  <h3 className="flex md:self-start text-xl font-bold text-gray-900 mb-5 md:mb-4">Track in Real Time</h3>
+                  <p className="text-gray-600 text-sm md:text-[13px] text-center md:text-justify">
+                    {"Stay updated every second. You can view your drone's location, estimated arrival, and drop-off time - all live on the map."}
+                  </p>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Real-Time Tracking</h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Track your delivery in real-time on our app. See exactly where your drone is and when it will arrive.
-                </p>
+                <Image src="/track_in_realtime.png" objectFit="contain" width={200} height={200} alt="Our Future Plans" className="w-100 h-100"/>
               </div>
             </div>
-
             {/* Step 4 */}
-            <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
-              <div className="flex-shrink-0">
-                <div className="flex items-center justify-center h-12 w-12 rounded-md bg-purple-600 text-white font-bold">
-                  4
+            <div className=" my-24 flex flex-col md:flex-row-reverse items-start md:items-center">
+              <div className="flex flex-col md:flex-row-reverse items-center justify-between  w-full">
+                <div className="max-w-xl md:w-72 flex flex-col items-center md:items-start md:text-center text-justify justify-center m-9 md:m-0">
+                  <h3 className="flex md:self-center text-xl font-bold text-gray-900 mb-5 md:mb-3">Delivered to Your Doorstep</h3>
+                  <p className="text-gray-600 text-sm md:text-[12px] text-center md:text-justify">
+                    The drone lands safely at the designated drop zone - your items arrives intact and on time.
+                  </p>
                 </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Delivered to Your Doorstep</h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Your package arrives safely at your location. Confirm receipt and enjoy your order instantly.
-                </p>
+                <Image src="/delivered_to_your_doorstep.png" objectFit="contain" width={200} height={200} alt="Our Future Plans" className="w-100 h-100 m-0 p-0"/>
               </div>
             </div>
+            
           </div>
         </div>
       </section>
@@ -213,20 +246,20 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className="my-40 bg-gray-50"
+      className="my-14 bg-gray-50"
       >
       <div className="max-w-6xl mx-auto px-6">
-         <div className="flex flex-col md:flex-row justify-between items-start gap-12">
-            <div className="flex flex-col">
-            <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-2">
-               FAQs
-            </motion.h2>
-            <motion.p variants={itemVariants} className="text-gray-600">
-               Everything You Need to Know
-            </motion.p>
+         <div className="flex flex-col md:flex-row justify-between items-start space-y-16 md:space-y-0">
+            <div className="flex-1 w-full px-6 md:px-0 md:max-w-2xl flex-col text-center md:text-left">
+              <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-2">
+                FAQs
+              </motion.h2>
+              <motion.p variants={itemVariants} className="text-gray-600">
+                Everything You Need to Know
+              </motion.p>
             </div>
 
-            <motion.div variants={containerVariants} className="flex-1 space-y-4 w-full md:max-w-2xl">
+            <motion.div variants={containerVariants} className="flex-1 space-y-1 w-full md:max-w-2xl">
             {faqss.map((faq, index) => (
                <motion.div
                   key={index}
@@ -266,7 +299,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
 
       {/* Future Plans Section */}
-      <section
+      {/* <section
         className="relative py-8 md:py-60 px-4 sm:px-6 lg:px-8 text-white text-center"
         style={{
           backgroundImage: "/our_future_plan.png",
@@ -286,10 +319,10 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
             Learn More
           </button>
         </div>
-      </section>
+      </section> */}
 
       {/* Support Section */}
-      <section className="py-12 md:py-46 px-4 sm:px-6 lg:px-8 bg-yellow-50">
+      <section className="py-12 md:py-46 px-4 sm:px-6 lg:px-8 bg-yellow-50 my-24">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Support the Future of Delivery</h2>
           <p className="text-gray-600 mb-8 text-sm md:text-base">
@@ -334,3 +367,5 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
    </>
    )
 }
+
+

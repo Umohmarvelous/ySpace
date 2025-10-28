@@ -89,7 +89,7 @@ export default function CompanyPage() {
     <main className="w-full">
         {/* Hero Section */}
 
-      <section className="py-12 md:py-10 mt-10 lg:mt-40 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 md:py-10 pt-10 lg:pt-40 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row md:justify-between">
           <div className="w-full lg:w-[200%] mb-20 lg:mb-0 text-center lg:text-left">
             <p className="text-[#A2A4A7] font-semibold mb-4 text-sm md:text-base">About Yspace</p>
@@ -163,7 +163,7 @@ export default function CompanyPage() {
 
 
       {/* FounderBio Section */}
-      <section className="flex flex-col bg-white items-center py-12 md:py-3 mt-2 ">
+      <section className="flex flex-col bg-white items-center py-12 md:py-0 ">
            <div className="py-16 px-4 sm:px-6 lg:px-20 max-w-7xl mx-auto">
              <h1 className="text-black text-3xl font-bold mb-10">About the Founder</h1>
              {founderBio.map((data, index) => (

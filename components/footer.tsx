@@ -37,7 +37,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-20 flex flex-row justify-between space-x-4">
         <motion.div variants={itemVariants}>
           <h3 className="text-lg font-bold mb-4">
-            <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
+            <Image src="/Logo white.png" width={100} height={100} alt="Team" className="w-full h-full object-fill rounded-lg" />
           </h3>
         </motion.div>
 

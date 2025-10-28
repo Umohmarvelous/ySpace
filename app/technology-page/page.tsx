@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import Image from "next/image"
+import TechHeroSection from "@/components/tech_hero_section"
 
 export default function TechnologyPage() {
   const features = [
@@ -11,15 +12,26 @@ export default function TechnologyPage() {
       title: "Smart Delivery Drones",
       description:
         "Our drones are equipped with advanced sensors, GPS, and obstacle detection to ensure safe and efficient delivery — even in challenging terrain.",
+        image: "/tech_drone_2.jpg"
     },
     {
       title: "Real-Time Tracking",
       description: "Our system calculates the fastest route and updates every second for full transparency.",
+      // image: [
+      //   src="/tech_drone_1.png" 
+      //   width={1000}
+      //   height={1000}
+      //   alt="Team" 
+      //   className="w-full h-full object-scale-down rounded-lg
+      // ],
+
     },
     {
       title: "Intelligent Dispatch System",
       description:
         "Our drones are built with clean, rechargeable energy systems — reducing emissions while improving delivery speed and reliability.",
+      image: "/tech_drone_3.jpg"
+
     },
   ]
 
@@ -60,31 +72,15 @@ export default function TechnologyPage() {
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        className="relative min-h-screen bg-gradient-to-br from-purple-400 to-purple-600 pt-24 flex items-center"
+        transition={{ duration: 0.1 }}
+        className="relative min-h-screen bg-gradient-to-br from-purple-400 to-purple-600 pt-24 flex items-center overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-6 w-full">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">Flagship VTOL Drone</h1>
-            <p className="text-xl mb-8 max-w-2xl">
-              Every flight is powered by intelligent systems designed for speed, safety and precision.
-            </p>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-96"
-        >
-          <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
-        </motion.div>
+        <TechHeroSection
+          title="Flagship VTOL Drone"
+          subtitle="Every flight is powered by intelligent systems designed for speed, safety and precision."
+          backgroundImage="/technologyPage_bg.png"
+        />
+        <Image src="/tech_drone_4.png" width={600} height={600} alt="Team" className="w-full h-full object-contain rounded-lg absolute left-16 top-48" /> 
       </motion.section>
 
       {/* Designed for Reliability */}
@@ -112,11 +108,14 @@ export default function TechnologyPage() {
                   <p className="text-gray-600 leading-relaxed">{feature.description}</p>
                 </div>
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                  <Image
-                    src={`/drone-feature-.jpg?height=300&width=300&query=drone feature ${index}`}
+                  {/* <Image
+                    src="/drone-feature-.jpg?height=300&width=300&query=drone" feature ${index}
                     alt={feature.title}
                     className="w-full rounded-lg"
-                  />
+                  /> */}
+                  {feature.image}
+                  <Image src="/tech_drone_2.png" width={1000} height={1000} alt="Team" className="z-50 w-full h-full object-scale-down rounded-lg" />
+
                 </motion.div>
               </motion.div>
             ))}
@@ -158,3 +157,5 @@ export default function TechnologyPage() {
     </div>
   )
 }
+
+<Image src="/tech_drone_1." width={600} height={600} alt="Team" className="w-full h-full object-fill rounded-lg" /> 

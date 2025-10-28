@@ -10,20 +10,20 @@ interface FeatureCardProps {
 
 export default function FeatureCard({ title, description, backgroundImage, icon }: FeatureCardProps): JSX.Element {
   return (
-    <div className="bg-gray-900 text-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col border-3 border-red-500 z-50 items-end justify-end">
+    <div className="bg-gray-900 h-auto m-5 text-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col z-50 items-end justify-end">
         <div
-          className="flex items-end relative w-full h-96 md:h-60 text-white overflow-hidden"
+          className=" relative w-full h-96 bg-transparent text-white overflow-hidden "
           style={{
               backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              backgroundSize: "200%",
+              backgroundPosition: "0px -2px",
             }}
           >
-            <div className="p-6 bg-black flex self-start items-left flex-col w-full justify-self-end bottom-0 left-0 right-0 absolute">
+            <div className="border-3 border-blue-500 p-8 bg-transparent flex self-start items-left flex-col w-full justify-self-end bottom-0 left-0 right-0 absolute">
               {icon && <div className="mb-4">{icon}</div>}
-              <h3 className="text-xl font-bold mb-2">{title}</h3>
-              <p className="text-gray-300 text-sm md:text-base">{description}</p>
-              <button className="flex items-start justify-start self-start border border-gray-100 p-12 rounded-lg mt-4 hover:text-purple-300 font-semibold text-sm transition-colors w-auto mx-auto text-white">
+              <h3 className="text-xl font-bold my-5">{title}</h3>
+              <p className="text-gray-300 text-sm md:text-md">{description}</p>
+              <button className="flex items-start justify-start self-start border border-gray-100 p-6 rounded-lg hover:text-purple-300 font-semibold text-sm transition-colors w-auto text-white mt-7">
                 Learn More 
               </button>
             </div>

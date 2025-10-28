@@ -12,7 +12,6 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { label: "Services", href: "/service-page" },
   { label: "Technology", href: "/technology-page" },
   { label: "Vendors", href: "/vendor-page" },
   { label: "Crowdfunding", href: "/crowdfunding-page" },
@@ -23,6 +22,11 @@ const moreLinks: NavLink[] = [
   { label: "Contact Us", href: "/contact-page" },
   { label: "Careers", href: "/career-page" },
   { label: "Blog", href: "/blog-page" },
+]
+
+const servicesLinks: NavLink[] = [
+  { label: "Shop on Marketplace", href: "/contact-page" },
+  { label: "Send Packages", href: "/career-page" },
 ]
 
 export default function Navigation() {
@@ -50,18 +54,38 @@ export default function Navigation() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md max-w-5xl flex self-center justify-center mx-auto mt-0 pt-0 rounded-2xl sm:rounded-full "
+      className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-md w-auto flex self-center justify-center mx-auto mt-10 pt-0 rounded-2xl sm:rounded-lg"
     >
-    <nav className="w-full sticky top-0 z-50 bg-transparent ">
-      <div className="max-w-7xl mx-auto py-10 px-4 sm:px-6 lg:px-8 ">
+    <nav className="w-full sticky top-0 z-50 bg-transparent">
+      <div className="py-10 px-4 sm:px-6 lg:px-8 ">
         <div className="flex justify-between items-center h-1">
           {/* Logo */}
           <Link href="/" className="text-xl font-bold text-white">
-              <Image src="/Logo.png" alt="picture showing a shopping cart" width={300} height={300} className="bg-transparent w-28 h-10" />
+              <Image src="/Logo white.png" alt="picture showing a shopping cart" width={300} height={300} className="bg-transparent w-28 sm:w-20 sm:h-8 md:w-28 h-10" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8 bg-zinc-200 p-2 rounded-full">
+          <div className=" hidden md:flex md:space-x-2 lg:space-x-10 items-center justify-around bg-zinc-200 p-2 rounded-full">
+            <div className="relative group ">
+              <button className="flex items-center gap-1 text-gray-700 hover:text-gray-900  p-3 rounded-full transition-colors text-sm font-medium">
+                Services
+                <ChevronDown className="w-4 h-4" />
+              </button>
+
+              {/* Services Link DropDown Menu */}
+              <div className="absolute left-[-10px] mt-4 rounded-xl w-44 h-30 flex flex-col bg-gray-300 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              {servicesLinks.map((servicelink: NavLink) => (
+                <Link
+                  key={servicelink.href}
+                  href={servicelink.href}
+                  className="block px-4 py-4 text-gray-700 hover:bg-gray-700 hover:text-white first:rounded-t-lg last:rounded-b-lg transition-colors text-sm"
+                >
+                  {servicelink.label}
+                </Link>
+              ))}
+              </div>
+            </div>
+
             {navLinks.map((link: NavLink) => (
               <Link
                 key={link.href}
@@ -71,14 +95,16 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
-            <div className="relative group">
-              <button className="flex items-center gap-1 text-gray-700 hover:text-gray-900 bg-gray-300 p-3 rounded-full transition-colors text-sm font-medium">
+
+            <div className="relative group ">
+              <button className="flex items-center gap-1 text-gray-700 hover:text-gray-900 p-3 rounded-full transition-colors text-sm font-medium">
                 More
                 <ChevronDown className="w-4 h-4" />
               </button>
 
-              {/* Dropdown Menu */}
-              <div className="absolute left-[-20px] mt-2 rounded-xl w-40 bg-gray-300 brounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100  group-hover:visible transition-all duration-200 z-50">
+
+              {/* More Link DropDown Menu */}
+              <div className="absolute left-[-72px] mt-4 rounded-xl w-40 bg-gray-300 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 {moreLinks.map((link: NavLink) => (
                   <Link
                     key={link.href}
@@ -88,8 +114,10 @@ export default function Navigation() {
                     {link.label}
                   </Link>
                 ))}
+
               </div>
             </div>
+                
           </div>
 
           {/* Cart Icon - Desktop */}
@@ -114,7 +142,7 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pt-0 border-t border-gray-700 mt-7">
+          <div className="md:hidden pt-0 border-t border-gray-400 mt-7">
             <div className="flex flex-col gap-3 pt-7 items-center">
               {navLinks.map((link: NavLink) => (
                 <Link
