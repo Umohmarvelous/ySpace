@@ -49,7 +49,6 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-white">
-      <Navigation />
 
       {/* Hero Section */}
       <motion.section
@@ -130,7 +129,7 @@ export default function ServicesPage() {
                   className="flex-shrink-0"
                 >
                   <Image
-                    src="/shopping-cart-groceries.jpg"
+                    src=""
                     alt="picture showing a shopping cart"
                     className="w-full md:w-96 h-auto rounded-2xl border border-white/20"
                   />
@@ -224,7 +223,6 @@ export default function ServicesPage() {
         </div>
       </motion.section>
 
-      <Footer />
     </div>
   )
 }

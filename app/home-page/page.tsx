@@ -113,7 +113,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       />
 
       {/* Features Section */}
-      <section className="py-12 md:py-30 px-4 sm:px-6 lg:px-8 bg-white mb-16">
+      <section className="py-12 md:py-30 px-4 sm:px-6 lg:px-8 mb-16">
         <div className="flex items-center justify-center h-100 w-full my-12">
           <Image src="/t-motor.png" width={1500} height={1500} alt="picture showing a donation icon" className="h-fit w-fit object-contain text-white flex items-center justify-center " />
         </div>
@@ -123,7 +123,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
             Experience the future of delivery with our cutting-edge drone technology
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-10 h-full  bg-transparent">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full  bg-transparent">
             <FeatureCard
               title="Shop on Marketplace"
               description="Discover local vendors, explor categories, and order what you need - from foom to tech. 

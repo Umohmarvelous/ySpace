@@ -23,14 +23,14 @@ export default function TechHeroSection({
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40" />
-         <div className="max-w-7xl mx-auto px-6 w-full z-50 text-left mt-72">
+         <div className="max-w-7xl mx-auto px-6 w-full z-50 text-left mt-40 md:mt-72">
             <motion.div
                initial={{ opacity: 0, y: 30 }}
                animate={{ opacity: 1, y: 0 }}
                transition={{ duration: 0.8, delay: 0.2 }}
                className="text-white"
             >
-               <h1 className="text-5xl md:text-5xl font-bold mb-6">{title}</h1>
+               <h1 className="text-2xl md:text-5xl font-bold mb-2 md:mb-6">{title}</h1>
                <p className="text-sm mb-8 max-w-2xl">
                {subtitle}
                </p>
