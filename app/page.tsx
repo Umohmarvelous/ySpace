@@ -4,7 +4,7 @@ export default function Home() {
 
   return (
     <>
-     <div className="overflow-y-scroll h-screen bg-white">
+     <div className="bg-white">
        <HomePage />
      </div>
     </>

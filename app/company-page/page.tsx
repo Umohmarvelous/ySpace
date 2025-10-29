@@ -87,7 +87,6 @@ export default function CompanyPage() {
 
   return (
     <main className="w-full">
-        {/* Hero Section */}
 
       <section className="py-12 md:py-10 pt-10 lg:pt-40 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row md:justify-between">
@@ -118,7 +117,7 @@ export default function CompanyPage() {
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-gray-900">Customers & Partners</h2>
           <div className="flex justify-center items-center">
             <div className="w-132 h-16 bg-white rounded-lg flex items-center justify-center border border-gray-200">
-              <Image src="/t-motor.png" width={400} height={400} alt="picture showing a partnership logo" className="w-screen bg-transparent object-fill " />            
+              <Image src="/t-motor.jpg" width={400} height={400} alt="picture showing a partnership logo" className="w-screen bg-transparent object-fill " />            
             </div>
           </div>
         </div>

@@ -1,9 +1,7 @@
 import type { Metadata } from 'next'
-// import './globals.css'
 import '../styles/globals.css'
 import Footer from '@/components/footer'
 import Navigation from '@/components/navigation'
-
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -22,7 +20,6 @@ export default function RootLayout({
         <Navigation />
             {children}
         <Footer /> 
-        {/* <Analytics /> */}
       </body>
     </html>
   )

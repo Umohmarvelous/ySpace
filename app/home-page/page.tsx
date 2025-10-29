@@ -106,16 +106,23 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
    <>
     <main className="w-full">
       {/* Hero Section */}
-      <HeroSection
-        title="Shop locally. Get it delivered Instantly"
-        subtitle="From food to gadgets and more, shop as a boss and get it delivered right to your doorstep- fast, and safe, all powered by drons. "
-        backgroundImage="/shop_instantly.png"
-      />
+      {/* <motion.p
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="fixed top-0 left-0 right-0 z-50 bg-transparent"
+      > */}
+        <HeroSection
+          title="Shop locally. Get it delivered Instantly"
+          subtitle="From food to gadgets and more, shop as a boss and get it delivered right to your doorstep- fast, and safe, all powered by drons. "
+          backgroundImage="/p_drone2.png"
+        />
+      {/* </motion.p> */}
 
       {/* Features Section */}
       <section className="py-12 md:py-30 px-4 sm:px-6 lg:px-8 mb-16">
         <div className="flex items-center justify-center h-100 w-full my-12">
-          <Image src="/t-motor.png" width={1500} height={1500} alt="picture showing a donation icon" className="h-fit w-fit object-contain text-white flex items-center justify-center " />
+          <Image src="/t-motor.jpg" width={1500} height={1500} alt="picture showing a donation icon" className="h-fit w-fit object-contain flex items-center justify-center " />
         </div>
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-1 mt-10 text-gray-900">Only Top notch Solution.</h2>

@@ -33,13 +33,13 @@ export default function HeroSection({
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-0 bg-black/70" />
 
       {/* Content */}
-      <div className="border-2 border-red-500 flex items-center justify-center flex-col relative z-10 mt-20 max-w-5xl">
-        <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance w-80">{title}</h1>
+      <div className="flex items-center justify-center flex-col relative z-10 mt-20 max-w-5xl">
+        <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-balance w-[600px]">{title}</h1>
 
-        <p className="w-[480px] md:w-full flex items-center justify-center border-2 border-red-500 text-sm sm:text-lg md:text-xl mb-8 md:mb-10 text-gray-100 text-balance">{subtitle}</p>
+        <p className="w-[480px] md:w-full flex items-center justify-center text-sm sm:text-lg md:text-xl mb-8 md:mb-10 text-gray-100 text-balance">{subtitle}</p>
 
         {/* Buttons */}
         <div className="w-auto flex flex-col sm:flex-row gap-6 justify-center">
