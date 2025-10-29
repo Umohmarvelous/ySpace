@@ -33,6 +33,7 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState<boolean>(false)
   const [isMobile, setIsMobile] = useState<boolean>(false)
   const [isMoreOpen, setIsMoreOpen] = useState<boolean>(false)
+  const [isServiceOpen, setIsServiceOpen] = useState<boolean>(false)
 
 
   useEffect(() => {
@@ -186,30 +187,57 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div className=" md:hidden p-5 pr-0 pt-8 pb- z-50 top-0 left-0 right-0 absolute bg-white">
-            {/* Mobile Menu Button */}
-          <div className="flex flex-row w-full justify-between z-50">
-            <Link href="/" className="text-xl font-bold text-white">
-                <Image src="/Logo.png" width={300} height={300} alt="picture showing a shopping cart" className="bg-transparent w-20 h-8" />
-            </Link>
-            <div className="flex flex-row">
-              <button className="pr- rounded-full transition-colors">
-                <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <ShoppingCart className="w-5 h-5 inline-block" />
-                </svg>
-              </button> 
-              <button
-                onClick={toggleMenu}
-                className=" md:hidden p-2 text-black flex flex-row-reverse px-6"
-                aria-label="Toggle menu"
-                aria-expanded={isOpen}
-              >
-                {isOpen ? <X className="w-5 h-5 text-black" /> : <Menu className="w-5 h-5 text-black" />}
-              </button>
-            </div>
-          </div>
+                {/* Mobile Menu Button */}
+              <div className="flex flex-row w-full justify-between z-50">
+                <Link href="/" className="text-xl font-bold text-white">
+                    <Image src="/Logo.png" width={300} height={300} alt="picture showing a shopping cart" className="bg-transparent w-20 h-8" />
+                </Link>
+                <div className="flex flex-row">
+                  <button className="pr- rounded-full transition-colors">
+                    <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <ShoppingCart className="w-5 h-5 inline-block" />
+                    </svg>
+                  </button> 
+                  <button
+                    onClick={toggleMenu}
+                    className=" md:hidden p-2 text-black flex flex-row-reverse px-6"
+                    aria-label="Toggle menu"
+                    aria-expanded={isOpen}
+                  >
+                    {isOpen ? <X className="w-5 h-5 text-black" /> : <Menu className="w-5 h-5 text-black" />}
+                  </button>
+                </div>
+              </div>
 
               <div className="flex flex-col gap-3 z-50 pt-8 pl-2 items-start self-start pr-4 pb-12">
-                <div className="border-t-[1px] border-t-zinc-400 pt-8 w-full">
+                              
+
+                  {/* Service dropDown */}
+                  <div className="border-t-[1px] border-t-zinc-400 pt-8 w-full">
+                  <button
+                    onClick={() => setIsServiceOpen(!isServiceOpen)}
+                    className="px-5 py-2 text-left text-gray-500 hover:bg-gray-100 rounded-lg transition-colors text-sm font-medium flex items-start self-start justify-between w-full"
+                    >
+                    Services
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isServiceOpen ? "rotate-180" : ""}`} />
+                  </button>
+
+                  {isServiceOpen && (
+                    <div className="w-[480px] bg-transparent flex items-start self-left justify-center flex-col text-center ml-7 border-t-[1px] border-t-gray-200">
+                      {servicesLinks.map((servicelink: NavLink) => (
+                    <Link
+                      key={servicelink.href}
+                      href={servicelink.href}
+                      className="w-full block px-2 py-2 text-gray-600 hover:text-[#9900E8] rounded-lg transition-colors text-sm text-left"
+                    >
+                      {servicelink.label}
+                    </Link>
+                  ))}
+                    </div>
+                  )}
+
+
+                  {/* NavBar Dropdown */}
                   {navLinks.map((link: NavLink) => (
                     <Link
                       key={link.href}
@@ -230,33 +258,35 @@ export default function Navigation() {
                 </div>
 
 
+                {/* More button Dropdown */}
+                <div className="w-full">
 
-                <button
-                  onClick={() => setIsMoreOpen(!isMoreOpen)}
-                  className="px-5 py-2 text-left text-gray-500 hover:bg-gray-100 rounded-lg transition-colors text-sm font-medium flex items-start self-start justify-between w-full"
-                  >
-                  More
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isMoreOpen ? "rotate-180" : ""}`} />
-                </button>
+                  <button
+                    onClick={() => setIsMoreOpen(!isMoreOpen)}
+                    className="px-5 py-2 text-left text-gray-500 transition-colors text-sm font-medium flex items-start self-start justify-between w-full"
+                    >
+                    More
+                    <ChevronDown className={`w-4 h-4 transition-transform ${isMoreOpen ? "rotate-180" : ""}`} />
+                  </button>
 
-                {isMoreOpen && (
-                  <div className="w-full bg-transparent flex items-start self-left justify-center border-l-2 border-l-black flex-col text-center ml-7">
-                    {moreLinks.map((link: NavLink) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="block px-2 py-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors text-sm"
-                        onClick={() => {
-                          setIsOpen(false)
-                          setIsMoreOpen(false)
-                        }}
-                      >
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-
+                  {isMoreOpen && (
+                    <div className=" w-[480px] bg-transparent flex items-start self-left justify-center flex-col text-center ml-7 border-t-[1px] border-t-gray-200">
+                      {moreLinks.map((link: NavLink) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className=" w-full block px-2 py-2 text-gray-600 hover:text-[#9900E8] transition-colors text-sm text-left"
+                          onClick={() => {
+                            setIsOpen(false)
+                            setIsMoreOpen(false)
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
           </div>
         )}

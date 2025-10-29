@@ -59,7 +59,7 @@ export default function ContactPage(): React.ReactElement {
 
 
   return (
-    <main className="min-h-screen bg-white overflow-hidden">
+    <main className="min-h-screen bg-white overflow-hidden pt-16">
       {/* Hero Section */}
       <section className="py-12 md:py-52 px-4 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
