@@ -106,18 +106,11 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
    <>
     <main className="w-full">
       {/* Hero Section */}
-      {/* <motion.p
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 bg-transparent"
-      > */}
         <HeroSection
           title="Shop locally. Get it delivered Instantly"
           subtitle="From food to gadgets and more, shop as a boss and get it delivered right to your doorstep- fast, and safe, all powered by drons. "
           backgroundImage="/p_drone2.png"
         />
-      {/* </motion.p> */}
 
       {/* Features Section */}
       <section className="py-12 md:py-30 px-4 sm:px-6 lg:px-8 mb-16">
@@ -291,7 +284,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
                      initial={{ opacity: 0, height: 0 }}
                      animate={{ opacity: 1, height: "auto" }}
                      exit={{ opacity: 0, height: 0 }}
-                     className="px-6 pb-4 bg-purple-50 border-t border-gray-200"
+                     className="px-6 pb-4"
                   >
                      <p className="text-gray-600 text-sm">{faq.answer}</p>
                   </motion.div>
@@ -317,7 +310,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       >
         <Image src="/our_future_plan.png" layout="fill" objectFit="cover" alt="Our Future Plans" />
         <div className="absolute inset-0 bg-black/50" />
-          <div className="flex items-start  flex-col text-justify w-[260px] md:w-[260px] relative z-10 max-w-2xl mx-auto top-[70px] left-14 md:left-32">
+          <div className="flex items-start  flex-col text-justify w-[260px] md:w-[260px] relative max-w-2xl mx-auto top-[70px] left-14 md:left-32">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Our Future Plans</h2>
             <p className="text-gray-100 mb-8 text-md md:text-base text-balance">
               {"We're not just delivering - we're redefining distance. From drones today to rockets tommorrow, Yspace is building Africa's leap into ultra-fast, borderless delivery."}
@@ -329,7 +322,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       </section>
 
       {/* Support Section */}
-      <section className="py-12 md:py-0 px-4 sm:px-6 lg:px-8 bg-yellow-50 my-20">
+      <section className="py-12 md:py-0 px-4 sm:px-6 lg:px-8 my-20">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-3xl font-bold mb-4 text-gray-900">Support the Future of Delivery</h2>
           <p className="text-gray-600 text-sm md:text-md">

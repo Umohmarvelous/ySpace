@@ -18,8 +18,8 @@ export default function DronesComp({ drones }: Drones) {
    <div className="p-5 pt-0 overflow-hidden">
       <div className="overflow-hidden flex flex-col md:flex-row max-w-8xl items-center justify-space-around space-t-12 sm:space-t-20">
             
-         <div className="pr-12 w-full md:w-80 text-center md:text-left">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 w-96">{drones.title}</h3>
+         <div className="pr-0 md:pr-12 w-full md:w-80 text-center md:text-left">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 w-full md:w-96">{drones.title}</h3>
             <p className="text-gray-500 leading-relaxed text-sm md:text-[12px]">{drones.label}</p>
          </div>
 

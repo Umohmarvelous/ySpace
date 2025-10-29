@@ -198,7 +198,7 @@ export default function ServicesPage() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="px-6 pb-2 w-[640px] bg-purple-50 border-t border-gray-200 "
+                      className="px-6 pb-2 w-[640px] border-t border-gray-200 "
                     >
                       <p className="text-gray-600 text-md">{faq.answer}</p>
                     </motion.div>
@@ -216,13 +216,13 @@ export default function ServicesPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="pb-40 pt-32 bg-green-50"
+        className="pb-40 pt-32 "
       >
         <div className="max-w-4xl mx-auto px-6 text-center flex items-center justify-center flex-col">
           <motion.h2 variants={itemVariants} className="text-3xl font-bold text-gray-900 mb-4">
             Send Packages
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-600 mb-9 w-[600px]">
+          <motion.p variants={itemVariants} className="text-gray-600 mb-9 w-[450px] md:w-[600px]">
             Need to send something fast? Yspace delivers documents, gifts, and parcels to any location — securely and
             without delay.
           </motion.p>

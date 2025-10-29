@@ -10,7 +10,7 @@ interface FeatureCardProps {
 
 export default function FeatureCard({ title, description, backgroundImage, icon }: FeatureCardProps): JSX.Element {
   return (
-    <div className="bg-gray-900 h-auto m-5 text-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col z-50 items-end justify-end">
+    <div className="bg-gray-900 h-auto m-5 text-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow flex flex-col items-end justify-end">
         <div
           className=" relative w-full h-96 bg-transparent text-white overflow-hidden "
           style={{

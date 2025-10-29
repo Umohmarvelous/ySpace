@@ -58,7 +58,7 @@ export default function TechnologyPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.1 }}
-        className="relative min-h-auto bg-gradient-to-br from-purple-400 to-purple-600 flex items-center overflow-hidden"
+        className="relative min-h-auto bg-white flex items-center overflow-hidden"
       >
         <TechHeroSection
           title="Flagship VTOL Drone"
@@ -80,7 +80,7 @@ export default function TechnologyPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="pt-12 bg-purple-100"
+        className="pt-12 "
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <motion.h2 variants={itemVariants} className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900 mb-10 sm:mb-0 w-[161px] md:w-[300px]">
@@ -97,9 +97,9 @@ export default function TechnologyPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className=" bg-white pb-32"
+        className=" bg-white pb-32 pt-12"
       >
-        <div className="max-w-3xl mx-auto px-14 md:px-6">
+        <div className="max-w-3xl mx-auto px-4 md:px-6">
           <motion.h2 variants={itemVariants} className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-32 text-center sm:text-right">
             Product Spec
           </motion.h2>
@@ -118,7 +118,7 @@ export default function TechnologyPage() {
                   <p className="text-xs sm:text-sm text-gray-800 ">{spec.label}
                   </p>
 
-                  <p className="text-base sm:text-sm font-medium text-gray-400">{spec.value}
+                  <p className="w-48 text-left text-base sm:text-sm font-medium text-gray-400">{spec.value}
                   </p>
                 </div>
 

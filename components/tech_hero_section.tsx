@@ -22,8 +22,8 @@ export default function TechHeroSection({
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40" />
-         <div className="max-w-7xl mx-auto px-6 w-full z-50 text-left mt-40 md:mt-72">
+      <div className="absolute inset-0 bg-black/40 z-10" />
+         <div className="max-w-7xl mx-auto px-6 w-full z-20 text-left mt-40 md:mt-72">
             <motion.div
                initial={{ opacity: 0, y: 30 }}
                animate={{ opacity: 1, y: 0 }}
