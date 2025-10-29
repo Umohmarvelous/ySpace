@@ -9,15 +9,15 @@ export default function CareerPage() {
   const benefits = [
     {
       title: "Flexible Work Environment",
-      description: "We provide healthy work-life balance with options for remote work and flexible hours.",
+      description: "Yspace provide healthy work-life balance with options for remote work and flexible hours.",
     },
     {
       title: "Supportive Team Culture",
-      description: "We work to build an inclusive environment where every voice is heard and valued.",
+      description: "We work to build an inclusive environment in which everyone can suceed.",
     },
     {
       title: "Accelerate Clear Growth",
-      description: "Yspace offers opportunities to grow your career with well-defined paths where needed.",
+      description: "yspace offers opportunities to grow your career with well-defined paths where needed.",
     },
     {
       title: "Comprehensive Benefits Package",
@@ -65,9 +65,9 @@ export default function CareerPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="pt-32 pb-12 bg-white"
+        className="pt-32 pb-12 bg-white "
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 ">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,18 +94,19 @@ export default function CareerPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="py-12 bg-white"
+        className="w-screen py-12 bg-white"
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div variants={containerVariants} className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="md:col-span-2 rounded-2xl overflow-hidden h-100">
-                <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
+
+        <div className="w-full">
+          <motion.div variants={containerVariants} className=" w-full flex flex-row items-center justify-between ">
+            <div className="rounded-tl-none rounded-tr-2xl rounded-bl rounded-br-2xl overflow-hidden h-full mr-2">
+                <Image src="/peoplegathering1.jpg" width={700} height={700} alt="Team" className="w-full h-full object-none rounded-lg" />
             </div>
-            <div className="flex flex-col space-y-10">
-              <div className="rounded-2xl overflow-hidden h-96">
+            <div className="flex flex-col space-y-2 my-3">
+              <div className="rounded-tl-2xl rounded-tr-none rounded-2xl rounded-br-none overflow-hidden h-96">
                   <Image src="/peoplegathering2.png" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />            
               </div>
-              <div className="rounded-2xl overflow-hidden h-96">
+              <div className="rounded-tl-2xl rounded-tr-none rounded-2xl rounded-br-none  overflow-hidden w-96 h-96">
                   <Image src="/peoplegathering3.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />            
               </div>
             </div>
@@ -126,7 +127,7 @@ export default function CareerPage() {
             Working at yspace
           </motion.h2>
           <motion.p variants={itemVariants} className="text-gray-600 text-center mb-12">
-            We are part of a global culture
+            {"We're team of a guided values"}
           </motion.p>
 
           <motion.div variants={containerVariants} className=" grid grid-cols-1 md:grid-cols-2 gap-8 hover:text-white transition">
@@ -178,9 +179,9 @@ export default function CareerPage() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className="bg-white border border-gray-700 rounded-lg p-6 flex items-center justify-between hover:shadow-lg transition"
+                className="bg-white border border-gray-300 rounded-lg p-6 flex items-center justify-between hover:shadow-lg transition"
               >
-                <div>
+                <div className="flex flex-row items-center justify-between space-x-4">
                   <h3 className="text-lg font-bold text-gray-900">{job.title}</h3>
                   <p className="text-gray-600 text-sm">{job.location}</p>
                 </div>

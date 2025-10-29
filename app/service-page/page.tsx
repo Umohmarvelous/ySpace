@@ -1,8 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Navigation from "@/components/navigation"
-import Footer from "@/components/footer"
 import { Button } from "@/components/ui/button"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import { useState } from "react"
@@ -58,7 +56,7 @@ export default function ServicesPage() {
         className="relative min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-24 flex items-center overflow-hidden"
       >
         <div className="absolute inset-0 opacity-20">
-          <Image src="/peoplegathering1.jpg" width={300} height={300} alt="Team" className="w-full h-full object-fill rounded-lg" />
+          <Image src="/services_bg.png" width={300} height={300} alt="Shop from trusted vendors or send packages fast with drone delivery" className="w-full h-full object-fill rounded-lg" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
@@ -68,20 +66,20 @@ export default function ServicesPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Services</h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl">
+            <p className="text-xl text-gray-300 mb-8 max-w-xl">
               Shop from trusted vendors or send packages fast with drone delivery.
             </p>
             <div className="flex gap-4">
             
               <button 
                 // onClick={onPrimaryClick}
-                className="px-6 md:px-8 py-3 md:py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
-                Shop on a marketplace
+                className="px-6 md:px-8 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+                Shop on Marketplace
               </button>
                      
               <button
                   // onClick={onSecondaryClick()}
-                  className="px-6 md:px-8 py-3 md:py-4 bg-white/20 hover:bg-white/30 text-white font-semibold rounded-lg transition-colors border border-white/50">
+                  className="px-6 md:px-8 py-3 md:py-4 hover:bg-white/30 text-white font-semibold rounded-lg transition-colors border border-white/50">
                 Send a Package
               </button>   
             </div>
@@ -98,22 +96,25 @@ export default function ServicesPage() {
         className="py-20 bg-white"
       >
         <div className="max-w-7xl mx-auto px-6">
-          <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-12">
+          <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-16">
             Shop on Marketplace
           </motion.h2>
 
-          <motion.div variants={itemVariants} className="bg-teal-700 rounded-3xl p-12 text-white overflow-hidden">
+
+
+{/* jkslwljdwjkdkwjekjkewjkkwjekjkwjew */}
+          <motion.div variants={itemVariants} className="bg-[#0D524B] rounded-3xl p-12 text-white overflow-hidden">
             <div className="w-full flex flex-col items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="w-full mb-6"
+                className="w-full -mb-6 z-50"
               >
                 <div className="flex gap-3 flex-wrap justify-center">
                   {["Food & Groceries", "Electronics", "Fashion & Beauty", "Health & Wellness"].map((cat) => (
-                    <span key={cat} className="bg-white/20 px-4 py-2 rounded-full text-sm">
+                    <span key={cat} className="bg-[#B9ECE7] px-4 py-3 rounded-full text-[12px] text-black">
                       {cat}
                     </span>
                   ))}
@@ -129,9 +130,11 @@ export default function ServicesPage() {
                   className="flex-shrink-0"
                 >
                   <Image
-                    src=""
+                    src="/food_&_groceries_services.png"
                     alt="picture showing a shopping cart"
-                    className="w-full md:w-96 h-auto rounded-2xl border border-white/20"
+                    width={800}
+                    height={800}
+                    className="w-full h-auto max-w-full sm:w-[32px] md:w-[420px]  rounded-2xl p-0 border border-white/20"
                   />
                 </motion.div>
 
@@ -143,6 +146,10 @@ export default function ServicesPage() {
               </div>
             </div>
           </motion.div>
+  {/* werljwknefkadk nlrfn vlkrnelkenl */}
+
+
+
         </div>
       </motion.section>
 
@@ -154,9 +161,9 @@ export default function ServicesPage() {
         variants={containerVariants}
         className="py-20 bg-gray-50"
       >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-start gap-12">
-            <div className="flex flex-col">
+        <div className="max-w-5xl mx-auto ">
+          <div className="flex flex-col md:flex-row justify-between items-start ">
+            <div className="flex flex-col pl-5">
               <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-2">
                 FAQs
               </motion.h2>
@@ -165,7 +172,7 @@ export default function ServicesPage() {
               </motion.p>
             </div>
 
-            <motion.div variants={containerVariants} className="flex-1 space-y-4 w-full md:max-w-2xl">
+            <motion.div variants={containerVariants} className="flex-1 space-y-2 w-full md:max-w-2xl">
               {faqs.map((faq, index) => (
                 <motion.div
                   key={index}
@@ -174,9 +181,9 @@ export default function ServicesPage() {
                 >
                   <button
                     onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                    className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition text-left"
+                    className="w-full px-6 py-6 flex items-center justify-between hover:bg-gray-50 transition text-left"
                   >
-                    <span className="font-semibold text-gray-900">{faq.question}</span>
+                    <span className="font-semibold text-gray-900 mb-0">{faq.question}</span>
                     {expandedFaq === index ? (
                       <MinusIcon className="w-5 h-5 text-gray-600 flex-shrink-0" />
                     ) : (
@@ -189,9 +196,9 @@ export default function ServicesPage() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
-                      className="px-6 pb-4 bg-purple-50 border-t border-gray-200"
+                      className="px-6 pb-2 w-[640px] bg-purple-50 border-t border-gray-200 "
                     >
-                      <p className="text-gray-600 text-sm">{faq.answer}</p>
+                      <p className="text-gray-600 text-md">{faq.answer}</p>
                     </motion.div>
                   )}
                 </motion.div>
@@ -207,18 +214,18 @@ export default function ServicesPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="py-20 bg-green-50"
+        className="pb-40 pt-32 bg-green-50"
       >
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-4">
+        <div className="max-w-4xl mx-auto px-6 text-center flex items-center justify-center flex-col">
+          <motion.h2 variants={itemVariants} className="text-3xl font-bold text-gray-900 mb-4">
             Send Packages
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-600 mb-8">
+          <motion.p variants={itemVariants} className="text-gray-600 mb-9 w-[600px]">
             Need to send something fast? Yspace delivers documents, gifts, and parcels to any location — securely and
             without delay.
           </motion.p>
           <motion.div variants={itemVariants}>
-            <Button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-6 text-lg">Start Today</Button>
+            <Button className="bg-[#9900E8] hover:bg-purple-700 text-white px-10 py-5 text-sm">Start Today</Button>
           </motion.div>
         </div>
       </motion.section>

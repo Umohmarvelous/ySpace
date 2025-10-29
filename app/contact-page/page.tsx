@@ -1,7 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
 import ContactForm from "@/components/contact-form"
-import { Mail, MapPin } from "lucide-react"
+import { Mail } from "lucide-react"
+import ContactInfo from "@/components/contact-info";
+
+
+
 
 export const metadata: Metadata = {
   title: "Contact Us - Yspace Drone Delivery",
@@ -13,6 +17,13 @@ export const metadata: Metadata = {
     description: "Reach out to Yspace for support, inquiries, or business partnerships.",
     type: "website",
   },
+}
+
+
+
+interface HqInfo {
+  name: string
+  text: string | string[]
 }
 
 interface ContactInfoItem {
@@ -29,32 +40,41 @@ export default function ContactPage(): React.ReactElement {
       content: [
         "Need help with an order or delivery?",
         "Our support team is always within reach.",
-        "Email: hello@yspace.inc",
-        "Phone: +234 [XXX XXX XXXX]",
-        "Hours: Mon-Fri, 9:00 AM - 6:00 PM (WAT)",
       ],
     },
-    {
-      icon: <MapPin className="w-6 h-6" />,
-      title: "HQ",
-      content: ["Yspace HQ", "Lagos, Nigeria"],
-    },
   ]
+  
+  const HqDetails : HqInfo[] = [
+    {
+      name: "ySpace HQ",
+      text: "Lagos, Nigeria",
+    }
+  ]
+
+  const customerSupportData = {
+    email: 'hello@yspace.inc',
+    phone: '+234 [XXX XXX XXXX]',
+    hours: 'Mon-Fri, 9:00 AM - 6:00 PM (WAT)',
+  };
+
 
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="py-12 md:py-20 px-4 md:px-8 lg:px-12">
+      <section className="py-12 md:py-52 px-4 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             {/* Left Column - Contact Information */}
             <div className="flex flex-col justify-start space-y-12">
-              <div>
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
+              <div className="w-full">
+                <h1 className="w-96 text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
                   {"We're building what's next"}
                 </h1>
-                <p className="text-gray-600 text-lg leading-relaxed">
-                {"  Got a question, idea, or partnership in mind? We'd love to hear from you. Because the future moves faster when we build it together."}
+                <p className="text-lg leading-relaxed w-[390px] text-zinc-400">
+                {"  Got a question, idea, or partnership in mind? "}
+                </p>
+                <p className="w-[490px] text-zinc-400">
+                  {"We'd love to hear from you. Because the future moves faster when we build it together."}
                 </p>
               </div>
 
@@ -62,21 +82,31 @@ export default function ContactPage(): React.ReactElement {
               <div className="space-y-8">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="space-y-3">
-                    <h2 className="text-xl font-semibold text-gray-900">{info.title}</h2>
+                    <h2 className="text-2xl font-semibold text-gray-900">{info.title}</h2>
                     {Array.isArray(info.content) ? (
-                      <div className="space-y-1 text-gray-600 text-sm md:text-base">
+                      <div className="space-y-1 text-zinc-400 text-lg md:text-lg">
                         {info.content.map((line, i) => (
                           <p key={i}>{line}</p>
                         ))}
+                        <div>   
+                          <ContactInfo data={customerSupportData} />
+                        </div>
                       </div>
                     ) : (
-                      <p className="text-gray-600 text-sm md:text-base">{info.content}</p>
+                      <p className="text-gray-600 text-sm md:text-base ">{info.content}</p>
                     )}
+                  </div>
+                ))}
+                {HqDetails.map((info, index)=>(
+                  <div key={index} className="flex flex-col">
+                    <h1 className="text-2xl font-medium my-2">HQ</h1>
+                    <h2 className="text-lg text-zinc-400">{info.name}</h2>
+                    <h2 className="text-lg text-zinc-400">{info.text}</h2>
                   </div>
                 ))}
               </div>
             </div>
-
+            
             {/* Right Column - Contact Form */}
             <div className="flex flex-col justify-start">
               <ContactForm />

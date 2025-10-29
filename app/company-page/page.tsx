@@ -175,18 +175,18 @@ export default function CompanyPage() {
                 </div>
 
                 <ul className="w-30 sm:w-84 md:w-fit px-5 sm:px-10 lg:px-0 flex self-start flex-col">
-                  <div className="flex flex-col items-left justify-left sm:justify-start space-x-2 mb-5 mt-0 sm:mt-5 md:mt-0">
-                    <h3 className="text-2xl font-bold text-gray-900">{data.name}</h3>
-                    <p className="text-gray-800 rounded-sm text-left self-left">{data.position}</p>
+                  <div className="flex flex-col items-left justify-left sm:justify-start space-x-2 mb-5 mt-0 sm:mt-5 md:mt-0 m-0 p-0">
+                    <h3 className="text-2xl font-bold text-gray-900 m-0 p-0">{data.name}</h3>
+                    <p className="flex items-start text-gray-800 rounded-sm text-left self-start m-0 p-0">{data.position}</p>
                   </div>
-                  <li className="text-gray-600 mb-4 text-sm">Background: 
-                  <span>
+                  <li className="text-black mb-4 text-sm font-normal">Background:  
+                  <span className="ml-2">
                     {data.background}
                   </span>
                   </li>
                   <li key={index} className="text-gray-900 mb-4">Role: 
-                    <span className="text-gray-600 mb-4 ml-3">
-                      - {data.role}
+                    <span className="text-gray-600 mb- ml-2">
+                    {data.role}
                     </span>
                   </li>
                 </ul>

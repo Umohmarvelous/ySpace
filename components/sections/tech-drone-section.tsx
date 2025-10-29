@@ -27,7 +27,11 @@ export default function TechDroneSection() {
             key={index}
             drones={drones}
          />
-      ))}
+        ))}
+        <div className="bottom-[350px] relative">
+          <div className="hidden md:flex border-[1px] border-gray-300 w-48 rotate-90 relative bottom-96 left-8 mb-12 border-dashed"></div>
+          <div className="hidden md:flex border-[1px] border-gray-300 w-48 rotate-90 relative bottom-12 left-8 mb-12 border-dashed"></div>
+        </div>
       </>
    )
 }

@@ -2,8 +2,9 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { Facebook, Linkedin, Twitter, Youtube, Instagram } from "lucide-react"
 import Image from "next/image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFacebookF, faInstagram, faLinkedinIn, faXTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 
 export default function Footer() {
   const containerVariants = {
@@ -17,14 +18,6 @@ export default function Footer() {
     },
   }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5 },
-    },
-  }
 
   return (
     <motion.footer
@@ -32,23 +25,23 @@ export default function Footer() {
       whileInView="visible"
       viewport={{ once: true }}
       variants={containerVariants}
-      className="bg-gray-900 text-white py-16"
+      className="bg-[#1d2023] text-white py-16"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-0 py-0 flex flex-col md:flex-row justify-between space-x-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-0 flex flex-col md:flex-row justify-between space-x-4">
         
-        <h3 className="text-lg font-bold mb-4 flex items-center self-center justify-center md:justify-left">
-          <Image src="/Logo white.png" width={100} height={100} alt="Team" className="w-20 h-12 object-fill rounded-lg mb-12" />
+        <h3 className="text-lg font-bold mb-4 flex items-center  md:justify-left">
+          <Image src="/Logo white.png" width={100} height={100} alt="Team" className="w-16 h-8 object-fill rounded-lg mb-24" />
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-4 mb-12">
           
-          <div className="ml-10 pb-12">
+          <div className="ml-0 md:ml-10 pb-12">
             <h4 className="font-semibold mb-4">Email</h4>
             <p className="text-gray-400 text-[11px]">hello@yspace.inc</p>
           </div>
 
           
-          <div className="ml-10 pb-7">
+          <div className="ml-0 md:ml-10 pb-7">
             <h4 className="font-semibold mb-4">Links</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
@@ -80,7 +73,7 @@ export default function Footer() {
           </div>
 
           
-          <div className="ml-10 pb-12">
+          <div className="ml-0 md:ml-10 pb-12">
             <h4 className="font-semibold mb-4">More</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
@@ -107,7 +100,7 @@ export default function Footer() {
           </div>
 
           
-          <div className="ml-7">
+          <div className="ml-0 md:ml-10 ">
             <h4 className="font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-gray-400">
               <li>
@@ -126,15 +119,30 @@ export default function Footer() {
       </div>
 
       <div
-        className="max-w-7xl mx-auto px-6 border-t border-gray-800 pt-3 flex flex-col md:flex-row items-center justify-between"
+        className="max-w-7xl mx-auto px-4 border-t border-gray-800 pt-3 flex flex-col md:flex-row items-left justify-between"
       >
-        <p className="text-sm text-gray-400">© 2025 Yspace Limited. All rights reserved.</p>
-        <div className="flex gap-4 mt-4 md:mt-0">
-          <Facebook className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition" />
-          <Linkedin className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition" />
-          <Twitter className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition" />
-          <Youtube className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition" />
-          <Instagram className="w-5 h-5 text-gray-400 hover:text-white cursor-pointer transition" />
+        <p className="text-[13px] text-white font-medium my-5">© 2025 Yspace Limited. All rights reserved.</p>
+
+        <div className="flex space-x-4 mt-4 md:mt-0">
+          <Link href={"#"} className="rounded-full border-[1px] border-gray-700 flex items-center justify-center">
+            <FontAwesomeIcon icon={faFacebookF} className="m-2 w-5 h-4 text-white hover:text-white cursor-pointer transition" />
+          </Link>
+
+          <Link href={"https://www.linkedin.com/company/yspace-inc/posts/?feedView=all"} className="rounded-full border-[1px] border-gray-700 flex items-center justify-center">
+            <FontAwesomeIcon icon={faLinkedinIn} className="m-2 w-4 h-4 text-white hover:text-white cursor-pointer transition" />
+          </Link>
+
+          <Link href={"/"} className="rounded-full border-[1px] border-gray-700 flex items-center justify-center">
+            <FontAwesomeIcon icon={faXTwitter} className="m-2 w-4 h-4 text-white hover:text-white cursor-pointer transition" />
+          </Link>
+
+          <Link href={"/"} className="rounded-full border-[1px] border-gray-700 flex items-center justify-center">
+            <FontAwesomeIcon icon={faYoutube} className="m-2 w-4 h-4 text-white hover:text-white cursor-pointer transition" />
+          </Link>
+
+          <Link href={"/"} className="rounded-full border-[1px] border-gray-700 flex items-center justify-center">
+            <FontAwesomeIcon icon={faInstagram} className="m-2 w-4 h-4 text-white hover:text-white cursor-pointer transition" />
+          </Link>
         </div>
       </div>
     </motion.footer>

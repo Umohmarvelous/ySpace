@@ -31,7 +31,7 @@ export default function TechHeroSection({
                className="text-white"
             >
                <h1 className="text-2xl md:text-5xl font-bold mb-2 md:mb-6">{title}</h1>
-               <p className="text-sm mb-8 max-w-2xl">
+               <p className="text-sm mb-8 max-w-sm md:max-w-lg md:text-lg">
                {subtitle}
                </p>
             </motion.div>

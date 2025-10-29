@@ -1,4 +1,8 @@
-import { AppleIcon, StoreIcon } from "lucide-react"
+import GooglePlayIcon from '@mui/icons-material/Home';
+import { AppleIcon } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons'; // Specific Brand icon
+import { faDownload } from '@fortawesome/free-solid-svg-icons'; // Specific Solid icon
 
 interface HeroSectionProps {
   title: string
@@ -21,7 +25,7 @@ export default function HeroSection({
 }: HeroSectionProps){
   return (
     <section
-      className=" relative w-full h-96 md:h-screen flex items-center justify-center text-center text-white overflow-hidden"
+      className=" relative w-full h-[600px] md:h-screen flex items-center justify-center text-center text-white overflow-hidden"
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
         backgroundSize: "cover",
@@ -38,18 +42,19 @@ export default function HeroSection({
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          
           <button
             onClick={onPrimaryClick}
-            className="flex flex-row items-center space-x-2 px-6 md:px-8 py-3 md:py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors"
+            className="flex flex-row items-center space-x-2 px-4 md:px-4 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-light rounded-lg transition-colors"
           >
-            <StoreIcon size={30} className="mr-3"/>
+            <FontAwesomeIcon icon={faGooglePlay} size="lg" className='mx-2' />
             {primaryButtonText}
           </button>
             <button
               onClick={onSecondaryClick}
-              className="flex flex-row items-center space-x-2 px-6 md:px-8 py-3 md:py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors"
+              className="flex flex-row items-center space-x-2 px-4 md:px-4 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-light rounded-lg transition-colors"
             >
-              <AppleIcon size={30} className="mr-3"/>
+              <FontAwesomeIcon icon={faApple} size="lg" className='mx-2' />              
               {secondaryButtonText}
             </button>
         </div>

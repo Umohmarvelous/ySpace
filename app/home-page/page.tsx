@@ -56,23 +56,23 @@ const faqss: FAQ[] = [
 const shopCart = [
   {
     title: "Food & Groceries",
-    label: "Shop household items, and other daily essentials from your trusted stores and supermarkets nearby.",
-    image:"/shopping_picture1.png",
-  },
-  {
-    title: "Food & Groceries",
-    label: "Shop household items, and other daily essentials from your trusted stores and supermarkets nearby.",
-    image:"/shopping_picture2.png",
+    label: "Shop household items from your trusted stores and supermarkets nearby.",
+    image:"/food_and_groceries.png",
   },
   {
     title: "Electronics",
-    label: "Shop household items, and other daily essentials from your trusted stores and supermarkets nearby.",
-    image:"/shopping_picture1.png",
+    label: "Any kind of electronics from your trusted stores and supermarkets nearby.",
+    image:"/electronics.png",
   },
   {
-    title: "Food & Groceries",
-    label: "Shop household items, and other daily essentials from your trusted stores and supermarkets nearby.",
-    image:"/shopping_picture2.png",
+    title: "Medications",
+    label: "Any health and wellness items from your trusted and supermarkets nearby.",
+    image:"/medications.png",
+  },
+  {
+    title: "Fashion",
+    label: "Any kind of wears from your trusted stores and supermarkets nearby.",
+    image:"/fashion_home.png",
   }
 ]
 
@@ -149,15 +149,16 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
         {/* Categories Section */}
       <section className="max-w-7xl mx-auto flex items-center flex-col">
-            <div className="flex flex-col items-center justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
+            <div className="flex flex-col items-center justify-center mb-12">
+              <h2 className="text-3xl md:text-3xl font-bold text-center mb-2 text-gray-900">
                 Any item at all, shop at Yspace.
               </h2>
-              <p className="text-center text-gray-600 mb-12 md:mb-16 text-sm md:text-base">
+              <p className="text-center text-gray-600 md:mb-0 text-sm md:text-base">
                 From everyday essentials to specialty items, we have everything you need
               </p>
             </div>
-            <div className="flex flex-col md:flex-row items-start flex-wrap space-x-0 md:space-x-5 space-y-10 m-10 md:space-y-0 py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+
+            <div className="flex flex-col md:flex-row items-start flex-wrap space-x-0 space-y-10 m-0 md:space-y-0 py-12 md:py-5 px-4 sm:px-6 bg-gray-50">
               {shopCart.map((item, index) => (
                 <CarretItemComponent key={index} store={item} />
               ))}
@@ -165,7 +166,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       </section>
 
       {/* How It Works Section */}
-      <section className="py-2 md:py-2 px-4 lg:px-0 bg-white">
+      <section className="py-2 md:py-16 px-4 lg:px-0 bg-white">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center  text-gray-900">How Yspace Works</h2>
           <p className="text-center text-gray-600 mb-6 md:mb-8 text-sm md:text-[15px] mt-4">
@@ -299,8 +300,8 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
 
       {/* Future Plans Section */}
-      {/* <section
-        className="relative py-8 md:py-60 px-4 sm:px-6 lg:px-8 text-white text-center"
+      <section
+        className="relative py-52 md:py-60 px-4 sm:px-6 lg:px-8 text-white text-center mb-0 "
         style={{
           backgroundImage: "/our_future_plan.png",
           backgroundSize: "cover",
@@ -309,40 +310,40 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       >
         <Image src="/our_future_plan.png" layout="fill" objectFit="cover" alt="Our Future Plans" />
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Future Plans</h2>
-          <p className="text-gray-100 mb-8 text-sm md:text-base text-balance">
-            We are not just delivering in select locations today. Yspace is building Africans first drone-powered
-            e-commerce and logistics network — and you can be part of it.
-          </p>
-          <button className="px-6 md:px-8 py-3 md:py-4 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
-            Learn More
-          </button>
-        </div>
-      </section> */}
+          <div className="flex items-start  flex-col text-justify w-[260px] relative z-10 max-w-2xl mx-auto top-[70px] left-32">
+            <h2 className="text-2xl md:text-4xl font-bold mb-4">Our Future Plans</h2>
+            <p className="text-gray-100 mb-8 text-md md:text-base text-balance">
+              {"We're not just delivering - we're redefining distance. From drones today to rockets tommorrow, Yspace is building Africa's leap into ultra-fast, borderless delivery."}
+            </p>
+            <button className="w-full px-6 md:px-8 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-normal rounded-lg transition-colors text-sm">
+              Learn More
+            </button>
+          </div>
+      </section>
 
       {/* Support Section */}
-      <section className="py-12 md:py-46 px-4 sm:px-6 lg:px-8 bg-yellow-50 my-24">
+      <section className="py-12 md:py-0 px-4 sm:px-6 lg:px-8 bg-yellow-50 my-20">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Support the Future of Delivery</h2>
-          <p className="text-gray-600 mb-8 text-sm md:text-base">
-            Yspace is building Africans first drone-powered e-commerce and logistics network — and you can be part of
-            it. We are raising funds to expand our fleet, onboard more merchants, and reach more cities.
+          <h2 className="text-3xl md:text-3xl font-bold mb-4 text-gray-900">Support the Future of Delivery</h2>
+          <p className="text-gray-600 text-sm md:text-md">
+            {"Yspace is building Africa's first drone-powered e-commerce and logistics network — and you can be part of it."}
+            <br />
+            We are raising funds to expand our fleet, onboard more merchants, and reach more cities.
           </p>
             {/* Progress Bar */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="bg-gray-900 rounded-lg p-6 mt-20 flex items-center justify-between max-w-lg mx-auto"
+              className="bg-gray-900 rounded-lg p-6 mt-16 flex items-center justify-between max-w-lg mx-auto flex-col md:flex-row"
             >
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
-                    <Image src="/box-usd 1.png" width={300} height={300} alt="picture showing a donation icon" className="w-6 h-6 object-fill text-white" />
+                <div className=" w-full flex items-center space-x-4">
+                  <div className="w-12 md:w-12 h-12 bg-zinc-700 rounded-full flex items-center justify-center">
+                    <Image src="/box-usd 1.png" width={300} height={300} alt="picture showing a donation icon" className="w-6 h-6 md:w-6 md:h-6 object-fill text-white" />
                   </div>
-                  <div className="flex items-start flex-col justify-between space-y-6">
-                    <div className="text-white font-extralight flex self-start justify-start">$10 raised of $50,000 goal</div>
-                    <div className="w-full h-2 bg-gray-700 rounded-full mt-2 overflow-hidden">
+                  <div className=" w-fill flex items-start flex-col justify-between space-y-4">
+                    <div className="text-white font-extralight flex self-start justify-start text-[20px] md:text-[16px]">$10 raised of $50,000 goal</div>
+                    <div className="w-52 h-2 bg-zinc-700 rounded-full mt-1 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: "10%" }}
@@ -356,7 +357,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#9900E8] hover:bg-purple-700 text-white font-bold py-3 px-8 rounded transition"
+                  className="bg-[#9900E8] hover:bg-purple-700 text-white font-bold py-3 px-8 my-3 mt-8 md:my-0 w-full md:w-fit rounded transition"
                 >
                   Donate
                 </motion.button>
