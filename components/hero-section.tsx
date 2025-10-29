@@ -1,8 +1,6 @@
-import GooglePlayIcon from '@mui/icons-material/Home';
-import { AppleIcon } from 'lucide-react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons'; // Specific Brand icon
-import { faDownload } from '@fortawesome/free-solid-svg-icons'; // Specific Solid icon
 
 interface HeroSectionProps {
   title: string

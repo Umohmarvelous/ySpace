@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Navigation from "@/components/navigation"
 import Image from "next/image"
 import TechHeroSection from "@/components/tech_hero_section"
 import TechDroneSection from "@/components/sections/tech-drone-section"

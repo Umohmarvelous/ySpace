@@ -1,4 +1,3 @@
-// ContactInfo.js
 import React from 'react';
 
 interface ContactInfoData {
@@ -12,11 +11,6 @@ interface ContactInfoProps {
 }
 
 const ContactInfo: React.FC<ContactInfoProps> = ({ data }) => {  
-  const labelStyle = {
-    fontWeight: 'bold', 
-    display: "flex",
-   //  fl: "row"
-  };
 
   return (
     <div className='flex flex-col'>
