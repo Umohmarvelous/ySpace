@@ -56,17 +56,22 @@ export default function Navigation() {
       transition={{ duration: 0.5 }}
       className="fixed top-0 left-0 right-0 z-50 bg-transparent"
     >
-    <nav className="w-full sticky top-0 z-50 bg-transparent ">
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 ">
-        <div className="flex justify-between items-center h-16">
+    <nav className="relative top-0 z-50 bg-transparent ">
+      <div className="">
+
+        <div className="flex flex-row items-center  justify-between w-auto h-auto">
+
+
           {/* Logo */}
-          <Link href="/" className="text-xl font-bold text-white">
-              <Image src="/Logo white.png" width={300} height={300} alt="picture showing a shopping cart" className="bg-transparent w-28 h-10" />
-          </Link>
+          <div className="flex self-start max-w-fit h-auto p-4">
+            <Link href="/" className="text-xl font-bold text-white">
+                <Image src="/Logo white.png" width={300} height={300} alt="picture showing a shopping cart" className="bg-transparent w-20 h-8" />
+            </Link>
+          </div>
 
-
+    
           {/* Desktop Navigation */}
-          <div className=" hidden md:flex md:space-x-0 lg:space-x-0 items-center justify-between bg-zinc-200 p-2 rounded-full">
+          <div className="md:flex md:self-center hidden w-auto md:space-x-0 lg:space-x-0 items-center justify-between bg-zinc-200 p-2 rounded-full">
             <div className="relative group ">
               <button className="flex items-center gap-1 text-gray-700 hover:text-gray-900 p-3 rounded-full transition-colors text-sm font-medium">
                 Services
@@ -122,7 +127,7 @@ export default function Navigation() {
           </div>
 
           {/* Cart Icon - Desktop */}
-          <div className="hidden md:items-end md:justify-self-end md:flex items-center gap-4  mx-6">
+          <div className=" border-2 border-purple-500 hidden md:items-end md:justify-self-end md:flex md:flex-row items-center right-0 absolute gap-4 mx-6 w-fit">
             <button className="p-2 rounded-full transition-colors">
               <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <ShoppingCart className="w-5 h-5 inline-block mr-2" />
@@ -131,20 +136,56 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={toggleMenu}
-            className="md:hidden p-2 bg-gray-300 rounded-lg transition-colors"
-            aria-label="Toggle menu"
-            aria-expanded={isOpen}
-          >
-            {isOpen ? <X className="w-5 h-5 text-black" /> : <Menu className="w-5 h-5 text-gray-900" />}
-          </button>
+          <div className="md:hidden p-2 text-white flex flex-row-reverse px-6">
+            <button
+              onClick={toggleMenu}
+              className=""
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="w-5 h-5 text-white" /> : <Menu className="w-5 h-5 text-white" />}
+            </button>
+            <button className="pr-6 rounded-full transition-colors">
+              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <ShoppingCart className="w-5 h-5 inline-block mr-6" />
+              </svg>
+            </button> 
+          </div>
         </div>
+
+
+
+
+
+
+
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden pt-0 border-t border-gray-400 mt-7">
-            <div className="flex flex-col gap-3 pt-7 items-center">
+          <div className="md:hidden p-5 pr-0 pt-5 top-0 left-0 right-0 absolute bg-white">
+            {/* Mobile Menu Button */}
+          <div className="flex flex-row w-full justify-between z-50">
+            <Link href="/" className="text-xl font-bold text-white">
+                <Image src="/Logo.png" width={300} height={300} alt="picture showing a shopping cart" className="bg-transparent w-20 h-8" />
+            </Link>
+            <div className="flex flex-row">
+              <button className="pr- rounded-full transition-colors">
+                <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <ShoppingCart className="w-5 h-5 inline-block" />
+                </svg>
+              </button> 
+              <button
+                onClick={toggleMenu}
+                className=" md:hidden p-2 text-black flex flex-row-reverse px-6"
+                aria-label="Toggle menu"
+                aria-expanded={isOpen}
+              >
+                {isOpen ? <X className="w-5 h-5 text-black" /> : <Menu className="w-5 h-5 text-black" />}
+                {/* <ShoppingCart className="w-5 h-5 inline-block mr-6" /> */}
+              </button>
+            </div>
+          </div>
+            <div className="flex flex-col gap-3 z-50 pt-20 pl-6 items-start">
               {navLinks.map((link: NavLink) => (
                 <Link
                   key={link.href}

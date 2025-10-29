@@ -56,7 +56,7 @@ export default function ServicesPage() {
         className="relative min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-24 flex items-center overflow-hidden"
       >
         <div className="absolute inset-0 opacity-20">
-          <Image src="/services_bg.png" width={300} height={300} alt="Shop from trusted vendors or send packages fast with drone delivery" className="w-full h-full object-fill rounded-lg" />
+          <Image src="/p_drone4.png" width={300} height={300} alt="Shop from trusted vendors or send packages fast with drone delivery" className="w-full h-full object-fill rounded-lg" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
@@ -65,21 +65,23 @@ export default function ServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">Services</h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-xl">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6  text-center md:text-left">Services</h1>
+            <p className="text-xl text-gray-300 mb-12 md:mb-8 max-w-xl text-center md:text-left ">
               Shop from trusted vendors or send packages fast with drone delivery.
             </p>
-            <div className="flex gap-4">
-            
+
+
+
+            <div className="w-full flex gap-4 flex-col md:flex-row md:w-full items-center">
               <button 
                 // onClick={onPrimaryClick}
-                className="px-6 md:px-8 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-semibold rounded-lg transition-colors">
+                className="w-52 px-6 md:px-8 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-colors">
                 Shop on Marketplace
               </button>
                      
               <button
                   // onClick={onSecondaryClick()}
-                  className="px-6 md:px-8 py-3 md:py-4 hover:bg-white/30 text-white font-semibold rounded-lg transition-colors border border-white/50">
+                  className="w-52 px-6 md:px-8 py-3 md:py-4 hover:bg-white/30 text-white text-sm font-medium rounded-lg transition-colors border border-[#9900E8]">
                 Send a Package
               </button>   
             </div>
@@ -113,9 +115,9 @@ export default function ServicesPage() {
                 className="w-full -mb-6 z-50"
               >
                 <div className="flex gap-3 flex-wrap justify-center">
-                  {["Food & Groceries", "Electronics", "Fashion & Beauty", "Health & Wellness"].map((cat) => (
-                    <span key={cat} className="bg-[#B9ECE7] px-4 py-3 rounded-full text-[12px] text-black">
-                      {cat}
+                  {["Food & Groceries", "Electronics", "Fashion & Beauty", "Health & Wellness"].map((item) => (
+                    <span key={item} className="bg-[#B9ECE7] px-4 py-3 rounded-full text-[12px] text-black">
+                      {item}
                     </span>
                   ))}
                 </div>
@@ -134,7 +136,7 @@ export default function ServicesPage() {
                     alt="picture showing a shopping cart"
                     width={800}
                     height={800}
-                    className="w-full h-auto max-w-full sm:w-[32px] md:w-[420px]  rounded-2xl p-0 border border-white/20"
+                    className="w-full h-auto max-w-full sm:w-[320px] md:w-[420px]  lg:w-[600px] rounded-2xl p-0 border border-white/20"
                   />
                 </motion.div>
 
