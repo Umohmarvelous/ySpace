@@ -317,7 +317,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       >
         <Image src="/our_future_plan.png" layout="fill" objectFit="cover" alt="Our Future Plans" />
         <div className="absolute inset-0 bg-black/50" />
-          <div className="flex items-start  flex-col text-justify w-[260px] relative z-10 max-w-2xl mx-auto top-[70px] left-32">
+          <div className="flex items-start  flex-col text-justify w-[260px] md:w-[260px] relative z-10 max-w-2xl mx-auto top-[70px] left-14 md:left-32">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Our Future Plans</h2>
             <p className="text-gray-100 mb-8 text-md md:text-base text-balance">
               {"We're not just delivering - we're redefining distance. From drones today to rockets tommorrow, Yspace is building Africa's leap into ultra-fast, borderless delivery."}

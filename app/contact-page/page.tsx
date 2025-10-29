@@ -59,7 +59,7 @@ export default function ContactPage(): React.ReactElement {
 
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white overflow-hidden">
       {/* Hero Section */}
       <section className="py-12 md:py-52 px-4 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">
@@ -67,19 +67,19 @@ export default function ContactPage(): React.ReactElement {
             {/* Left Column - Contact Information */}
             <div className="flex flex-col justify-start space-y-12">
               <div className="w-full">
-                <h1 className="w-96 text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
+                <h1 className="w-72 md:w-96 text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-balance">
                   {"We're building what's next"}
                 </h1>
-                <p className="text-lg leading-relaxed w-[390px] text-zinc-400">
+                <p className="text-lg leading-relaxed w-[500px] md:w-[390px] text-zinc-400">
                 {"  Got a question, idea, or partnership in mind? "}
                 </p>
-                <p className="w-[490px] text-zinc-400">
+                <p className="w-[390px] md:w-[490px] text-zinc-400">
                   {"We'd love to hear from you. Because the future moves faster when we build it together."}
                 </p>
               </div>
 
               {/* Contact Info Cards */}
-              <div className="space-y-8">
+              <div className="space-y-8 ">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="space-y-3">
                     <h2 className="text-2xl font-semibold text-gray-900">{info.title}</h2>
