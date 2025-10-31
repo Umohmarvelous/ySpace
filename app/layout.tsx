@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
-        <Navigation />
+        <Navigation theme="dark" />
             {children}
         <Footer /> 
       </body>

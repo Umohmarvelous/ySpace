@@ -148,6 +148,51 @@ export default function ServicesPage() {
               </div>
             </div>
           </motion.div>
+
+
+
+
+
+
+
+
+        {/* Values Section */}
+      {/* <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-purple-900 text-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl md:text-4xl font-bold text-center md:text-left w-50 md:w-96">Our values guide everything we do.</h2>
+          <div className="flex flex-col md:flex-row justify-between space-x-10 mt-12 md:mt-16">
+
+<div className="space-y-6 md:flex grid grid-row-3 md:flex-col">
+              {values.map((value, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedValueIndex(index)}
+                  className={`text-left transition-all ${
+                    selectedValueIndex === index ? "opacity-100 text-[#1BB1A3]" : " opacity-70 hover:opacity-85"
+                  }`}
+                >
+                  <h3 className="text-xl font-bold mb-2 flex items-center gap-3">
+                    <span className={`text-left transition-all text-[12px] ${
+                    selectedValueIndex === index ? "text-[12px] opacity-100 text-[#1BB1A3]" : "opacity-70 hover:opacity-85"
+                  }`}>0{index + 1}</span>
+                    {value.title}
+                  </h3>
+                </button>
+              ))}
+            </div>
+
+
+<div className="bg-purple-100 text-gray-900 rounded-lg p-8 flex items-center w-50 md:w-[50%]">
+              <div>
+                <div className="text-3xl mb-4 text-[#116B62]">★</div>
+                <p className="text-sm md:text-base leading-relaxed">
+                  {values[selectedValueIndex].description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
   {/* werljwknefkadk nlrfn vlkrnelkenl */}
 
 
@@ -161,11 +206,11 @@ export default function ServicesPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="py-20 bg-gray-50"
+        className="py-20"
       >
-        <div className="max-w-5xl mx-auto ">
-          <div className="flex flex-col md:flex-row justify-between items-start ">
-            <div className="flex flex-col pl-5">
+        <div className="w-full  mx-auto bg-[#FFF9E6] px-4 py-20">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start">
+            <div className="flex flex-col pl-0 md:pl-5 items-center md:items-start pb-12 md:pb-0">
               <motion.h2 variants={itemVariants} className="text-4xl font-bold text-gray-900 mb-2">
                 FAQs
               </motion.h2>
@@ -174,16 +219,16 @@ export default function ServicesPage() {
               </motion.p>
             </div>
 
-            <motion.div variants={containerVariants} className="flex-1 space-y-2 w-full md:max-w-2xl">
+            <motion.div variants={containerVariants} className="flex-1 space-y-4 w-full md:max-w-2xl">
               {faqs.map((faq, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="bg-white rounded-lg border border-gray-200 overflow-hidden"
+                  className="bg-white rounded-lg overflow-hidden"
                 >
                   <button
                     onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                    className="w-full px-6 py-6 flex items-center justify-between hover:bg-gray-50 transition text-left"
+                    className="w-full px-6 py-8 flex items-center justify-between hover:bg-gray-50 transition text-left"
                   >
                     <span className="font-semibold text-gray-900 mb-0">{faq.question}</span>
                     {expandedFaq === index ? (
@@ -216,13 +261,13 @@ export default function ServicesPage() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={containerVariants}
-        className="pb-40 pt-32 "
+        className="pb-12 px-3"
       >
-        <div className="max-w-4xl mx-auto px-6 text-center flex items-center justify-center flex-col">
+        <div className="max-w-4xl mx-auto px-6 py-12 text-center flex items-center justify-center flex-col bg-[#E9F9F7] rounded-xl">
           <motion.h2 variants={itemVariants} className="text-3xl font-bold text-gray-900 mb-4">
             Send Packages
           </motion.h2>
-          <motion.p variants={itemVariants} className="text-gray-600 mb-9 w-[450px] md:w-[600px]">
+          <motion.p variants={itemVariants} className="text-gray-600 mb-9 w-[350px] md:w-[600px]">
             Need to send something fast? Yspace delivers documents, gifts, and parcels to any location — securely and
             without delay.
           </motion.p>

@@ -86,9 +86,9 @@ export default function CompanyPage() {
   const [selectedValueIndex, setSelectedValueIndex] = useState<number>(0)
 
   return (
-    <main className="w-full">
+    <main className="w-full pt-0 md:pt-32">
 
-      <section className="py-12 md:py-10 pt-10 lg:pt-40 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 md:py-10 pt-32 lg:pt-40 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row md:justify-between">
           <div className="w-full lg:w-[200%] mb-20 lg:mb-0 text-center lg:text-left">
             <p className="text-[#A2A4A7] font-semibold mb-4 text-sm md:text-base">About Yspace</p>
@@ -116,7 +116,7 @@ export default function CompanyPage() {
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-gray-900">Customers & Partners</h2>
           <div className="flex justify-center items-center">
-            <div className="w-132 h-16 bg-white rounded-lg flex items-center justify-center border border-gray-200">
+            <div className="w-32 h-16 rounded-lg flex items-center justify-center">
               <Image src="/t-motor.jpg" width={400} height={400} alt="picture showing a partnership logo" className="w-screen bg-transparent object-fill " />            
             </div>
           </div>
@@ -153,7 +153,8 @@ export default function CompanyPage() {
             <div className="bg-purple-100 text-gray-900 rounded-lg p-8 flex items-center w-50 md:w-[50%]">
               <div>
                 <div className="text-3xl mb-4 text-[#116B62]">★</div>
-                <p className="text-sm md:text-base leading-relaxed">{values[selectedValueIndex].description}</p>
+                <p className="text-sm md:text-base leading-relaxed">
+                  {values[selectedValueIndex].description}</p>
               </div>
             </div>
           </div>
