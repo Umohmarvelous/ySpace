@@ -303,7 +303,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       <section
         className="relative py-52 md:py-60 px-4 sm:px-6 lg:px-8 text-white text-center mb-0 "
         style={{
-          backgroundImage: "/our_future_plan.png",
+          backgroundImage: "/our_future_plan.jpg",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

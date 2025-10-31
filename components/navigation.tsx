@@ -77,7 +77,7 @@ export default function Navigation({ theme }: NavigationProps) {
   const inactiveTextColor = theme === 'dark' ? 'text-gray-400' : 'text-gray-500';
   const hoverTextColor = theme === 'dark' ? 'hover:text-black' : 'hover:text-gray-900';
   const iconColor = theme === 'dark' ? 'text-white' : 'text-black';
-  const mobileBg = theme !== 'dark' ? 'text-gray-400' : 'text-white';
+  const mobileBg = theme === 'dark' ? 'text-gray-400' : 'text-white';
   
   useEffect(() => {
     const handleResize = (): void => {
