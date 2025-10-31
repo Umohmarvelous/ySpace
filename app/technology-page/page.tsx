@@ -63,15 +63,8 @@ export default function TechnologyPage() {
         <TechHeroSection
           title="Flagship VTOL Drone"
           subtitle="Every flight is powered by intelligent systems designed for speed, safety and precision."
-          backgroundImage="/technologyPage_bg.png"
+          backgroundImage="/technologyPage_bg.svg"
         />
-        <Image 
-          src="/tech_drone_4.png" 
-          width={600} 
-          height={600} 
-          alt="Drone Technology" 
-          className=" lg:block w-[1000px] sm:max-w-30 md:w-[1250px] h-auto object-fill absolute left-8 xl:left-16 top-32 sm:top-20 md:top-32" 
-        /> 
       </motion.section>
 
       {/* Designed for Reliability */}

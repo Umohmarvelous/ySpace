@@ -88,7 +88,7 @@ export default function CompanyPage() {
   return (
     <main className="w-full pt-0 md:pt-32">
 
-      <section className="py-12 md:py-10 pt-32 lg:pt-40 px-4 sm:px-6 lg:px-8 bg-white">
+      <section className="py-12 md:py-10 pt-32 lg:pt-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row md:justify-between">
           <div className="w-full lg:w-[200%] mb-20 lg:mb-0 text-center lg:text-left">
             <p className="text-[#A2A4A7] font-semibold mb-4 text-sm md:text-base">About Yspace</p>
@@ -112,7 +112,7 @@ export default function CompanyPage() {
       </section>
 
       {/* Partners Section */}
-      <section className="py-12 md:py-40 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-12 md:py-40 md:pb-24 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold mb-12 text-gray-900">Customers & Partners</h2>
           <div className="flex justify-center items-center">

@@ -14,7 +14,7 @@ export default function TechHeroSection({
 }: TechHeroSectionProps){
   return (
     <section
-      className=" relative w-full h-96 md:h-screen flex items-center justify-center text-center text-white overflow-hidden"
+      className=" relative w-full h-96 md:h-auto pb-36 flex items-center justify-center text-center text-white overflow-hidden pt-40 md:pt-80"
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
         backgroundSize: "cover",
@@ -22,8 +22,8 @@ export default function TechHeroSection({
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
-         <div className="max-w-7xl mx-auto px-6 w-full z-20 text-left mt-40 md:mt-72">
+      {/* <div className="absolute inset-0 bg-black/40 z-10" /> */}
+         <div className="max-w-7xl mx-auto px-6 w-full z-20 text-left ">
             <motion.div
                initial={{ opacity: 0, y: 30 }}
                animate={{ opacity: 1, y: 0 }}

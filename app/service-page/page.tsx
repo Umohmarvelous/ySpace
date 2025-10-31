@@ -6,8 +6,42 @@ import { MinusIcon, PlusIcon } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 
+
+
+
+
+interface ListValue {
+  name: string
+  description: string
+  image: string
+}
+
+
+  const listItems : ListValue[] = [
+    { name: "Food & Groceries",
+      description:"Get your daily essentials and favorite meals delivered faster than ever. From fresh produce to ready-to-eat dishes, Yspace connects you to trusted local vendors and delivers straight to your doorstep — fresh, fast, and right on time.",
+      image:"/food_&_groceries_services.png"
+    },
+    { name: "Electronics",
+      description:"Stay powered and connected with the latest gadgets, devices, and accessories. From smartphones to smart home tech, Yspace brings trusted electronics vendors right to your fingertips — and delivers your orders safely by drone, faster than ever.",
+      image:"/electronics_services.png"
+     },
+    { name: "Fashion & Beauty",
+      description:"Shop the latest trends and self-care essentials from your favorite local brands. Whether it’s clothing, skincare, or accessories, Yspace delivers your style picks straight to your doorstep — fast, fresh, and effortlessly.",
+      image:"/fashion_services.png"
+     },
+    { name: "Health & Beauty",
+      description:"Stay healthy and refreshed with essential health products, supplements, and wellness items from trusted vendors. Yspace ensures your orders arrive safely and swiftly — helping you care for yourself, anytime, anywhere.",
+      image:"/health_&welness_services.png"
+     },
+
+  ]
+
+
+
 export default function ServicesPage() {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+  const [selectedValueIndex, setSelectedValueIndex] = useState<number>(0)
 
   const faqs = [
     {
@@ -53,10 +87,10 @@ export default function ServicesPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className="relative min-h-screen bg-gradient-to-br from-gray-800 to-gray-900 pt-24 flex items-center overflow-hidden"
+        className=" bg-gradient-to-br from-gray-800 to-gray-800 relative w-full h-96 md:h-auto pb-32 flex items-center justify-center text-center text-white overflow-hidden pt-32 md:pt-72"
       >
-        <div className="absolute inset-0 opacity-20">
-          <Image src="/p_drone4.png" width={300} height={300} alt="Shop from trusted vendors or send packages fast with drone delivery" className="w-full h-full object-fill rounded-lg" />
+        <div className="absolute inset-0 opacity-90">
+          <Image src="/Service_Img_Main.svg" width={300} height={300} alt="Shop from trusted vendors or send packages fast with drone delivery" className="w-full h-full object-cover rounded-lg" />
         </div>
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10">
@@ -104,96 +138,46 @@ export default function ServicesPage() {
 
 
 
-{/* jkslwljdwjkdkwjekjkewjkkwjekjkwjew */}
-          <motion.div variants={itemVariants} className="bg-[#0D524B] rounded-3xl p-12 text-white overflow-hidden">
-            <div className="w-full flex flex-col items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                className="w-full -mb-6 z-50"
-              >
+
+
+        {/* Items Section */}
+        <section className="bg-[#0D524B] rounded-3xl p-12 text-white overflow-hidden">
+          <div className="w-full flex flex-col items-center">
+            
+              <div className="w-full -mb-6 z-50">
+
                 <div className="flex gap-3 flex-wrap justify-center">
-                  {["Food & Groceries", "Electronics", "Fashion & Beauty", "Health & Wellness"].map((item) => (
-                    <span key={item} className="bg-[#B9ECE7] px-4 py-3 rounded-full text-[12px] text-black">
-                      {item}
-                    </span>
+                  {listItems.map((value, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setSelectedValueIndex(index)}
+                      className={`bg-[#B9ECE7] px-2 py-2 rounded-full text-[12px] text-black text-left transition-all ${
+                        selectedValueIndex === index ? "text-[#1BB1A3]" : " "
+                      }`}
+                    >
+                      <h3 className="bg-[#B9ECE7] px-3 py-1 rounded-full text-[12px] text-black">
+                        
+                        {value.name}
+                      </h3>
+                    </button>
                   ))}
                 </div>
-              </motion.div>
 
-              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8">
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="flex-shrink-0"
-                >
-                  <Image
-                    src="/food_&_groceries_services.png"
-                    alt="picture showing a shopping cart"
-                    width={800}
-                    height={800}
-                    className="w-full h-auto max-w-full sm:w-[320px] md:w-[420px]  lg:w-[600px] rounded-2xl p-0 border border-white/20"
-                  />
-                </motion.div>
-
-                <p className="text-lg leading-relaxed max-w-2xl">
-                  Get your daily essentials and favorite meals delivered faster than ever. From fresh produce to
-                  ready-to-eat dishes, Yspace connects you to trusted local vendors and delivers straight to your
-                  doorstep — fresh, fast, and right on time.
-                </p>
               </div>
-            </div>
-          </motion.div>
 
+              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-8 ">
+                
+                <Image src={listItems[selectedValueIndex].image} alt="quote" width={800} height={800} className="w-full h-auto max-w-full sm:w-[320px] md:w-[420px]  lg:w-[600px] rounded-2xl p-0 border border-white/20" />
 
+                <div>
 
-
-
-
-
-
-        {/* Values Section */}
-      {/* <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 bg-purple-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl md:text-4xl font-bold text-center md:text-left w-50 md:w-96">Our values guide everything we do.</h2>
-          <div className="flex flex-col md:flex-row justify-between space-x-10 mt-12 md:mt-16">
-
-<div className="space-y-6 md:flex grid grid-row-3 md:flex-col">
-              {values.map((value, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedValueIndex(index)}
-                  className={`text-left transition-all ${
-                    selectedValueIndex === index ? "opacity-100 text-[#1BB1A3]" : " opacity-70 hover:opacity-85"
-                  }`}
-                >
-                  <h3 className="text-xl font-bold mb-2 flex items-center gap-3">
-                    <span className={`text-left transition-all text-[12px] ${
-                    selectedValueIndex === index ? "text-[12px] opacity-100 text-[#1BB1A3]" : "opacity-70 hover:opacity-85"
-                  }`}>0{index + 1}</span>
-                    {value.title}
-                  </h3>
-                </button>
-              ))}
-            </div>
-
-
-<div className="bg-purple-100 text-gray-900 rounded-lg p-8 flex items-center w-50 md:w-[50%]">
-              <div>
-                <div className="text-3xl mb-4 text-[#116B62]">★</div>
-                <p className="text-sm md:text-base leading-relaxed">
-                  {values[selectedValueIndex].description}</p>
+                  <p className="text-lg leading-relaxed max-w-sm">
+                      {listItems[selectedValueIndex].description}
+                  </p>
+                </div>
               </div>
-            </div>
           </div>
-        </div>
-      </section> */}
-
-  {/* werljwknefkadk nlrfn vlkrnelkenl */}
+        </section>
 
 
 

@@ -15,8 +15,8 @@ export default function FeatureCard({ title, description, backgroundImage, icon 
           className=" relative w-full h-96 bg-transparent text-white overflow-hidden "
           style={{
               backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-              backgroundSize: "200%",
-              backgroundPosition: "0px -2px",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
             }}
           >
             <div className="border-3 border-blue-500 p-8 bg-transparent flex self-start items-left flex-col w-full justify-self-end bottom-0 left-0 right-0 absolute">

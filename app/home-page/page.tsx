@@ -57,7 +57,7 @@ const shopCart = [
   {
     title: "Food & Groceries",
     label: "Shop household items from your trusted stores and supermarkets nearby.",
-    image:"/food_and_groceries.png",
+    image:"/food_and_groceries.svg",
   },
   {
     title: "Electronics",
@@ -109,7 +109,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
         <HeroSection
           title="Shop locally. Get it delivered Instantly"
           subtitle="From food to gadgets and more, shop as a boss and get it delivered right to your doorstep- fast, and safe, all powered by drons. "
-          backgroundImage="/p_dron6.png"
+          backgroundImage="/Home_IMG_1.svg"
         />
 
       {/* Features Section */}
@@ -128,18 +128,18 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
               title="Shop on Marketplace"
               description="Discover local vendors, explor categories, and order what you need - from foom to tech. 
               Delivered by Drone, right to your doorstep."
-              backgroundImage="/shop_on_marketplace.png"
+              backgroundImage="/Home_IMG_3.svg"
             />
             <FeatureCard
               title="Send Packages Instantly"
               description="Need to send something across town? 
               Book a drone, drop it off, and track it live as it flies to the destination."
-              backgroundImage="/send_packages_instantly.png"
+              backgroundImage="/Home_IMG_4.svg"
             />
             <FeatureCard
               title="Partner your Business"
               description="Join Yspace to reach more customers and get your products delivered by drone within minutes."
-              backgroundImage="/patner_your_business.png"
+              backgroundImage="/Home_IMG_2.svg"
             />
           </div>
         </div>
@@ -301,14 +301,14 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
       {/* Future Plans Section */}
       <section
-        className="relative py-52 md:py-60 px-4 sm:px-6 lg:px-8 text-white text-center mb-0 "
+        className="relative py-52 md:py-40 px-4 sm:px-6 lg:px-8 text-white text-center mb-0 "
         style={{
           backgroundImage: "/our_future_plan.JPG",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <Image src="/our_future_plan.JPG" layout="fill" objectFit="cover" alt="Our Future Plans" />
+        <Image src="/our_future_plan.svg" layout="fill" objectFit="cover" alt="Our Future Plans" />
         <div className="absolute inset-0 bg-black/50" />
           <div className="flex items-start  flex-col text-justify w-[260px] md:w-[260px] relative max-w-2xl mx-auto top-[70px] left-14 md:left-32">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Our Future Plans</h2>

@@ -23,15 +23,16 @@ export default function HeroSection({
 }: HeroSectionProps){
   return (
     <section
-      className=" relative w-full h-[600px] md:h-screen flex items-center justify-center text-center text-white overflow-hidden"
+      className=" relative w-full h-[600px] md:h-96 flex items-center justify-center text-center text-white overflow-hidden pt-96 pb-72"
       style={{
-        backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
-        backgroundSize: "cover",
+        backgroundImage: backgroundImage ? `url(${backgroundImage } )` : undefined,
+        backgroundSize: "center",
         backgroundPosition: "center",
       }}
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black/70" />
+
+       {/* Overlay */}
+      {/* <div className="absolute inset-0 bg-black/70" /> */}
 
       {/* Content */}
       <div className="flex items-center justify-center flex-col relative z-10 mt-20 max-w-5xl">
