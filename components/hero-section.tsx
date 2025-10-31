@@ -51,7 +51,7 @@ export default function HeroSection({
           </button>
           <button
             onClick={onSecondaryClick}
-            className="flex flex-row items-center self-center space-x-2 px-4 md:px-4 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-light rounded-lg transition-colors"
+            className="flex flex-row items-center self-center space-x-2 px-2 md:px-4 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-light rounded-lg transition-colors"
           >
             <FontAwesomeIcon icon={faApple} size="lg" className='mx-2' />              
             {secondaryButtonText}

@@ -109,7 +109,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
         <HeroSection
           title="Shop locally. Get it delivered Instantly"
           subtitle="From food to gadgets and more, shop as a boss and get it delivered right to your doorstep- fast, and safe, all powered by drons. "
-          backgroundImage="/p_drone2.png"
+          backgroundImage="/p_dron6.png"
         />
 
       {/* Features Section */}
@@ -303,12 +303,12 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
       <section
         className="relative py-52 md:py-60 px-4 sm:px-6 lg:px-8 text-white text-center mb-0 "
         style={{
-          backgroundImage: "/our_future_plan.jpg",
+          backgroundImage: "/our_future_plan.JPG",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <Image src="/our_future_plan.jpg" layout="fill" objectFit="cover" alt="Our Future Plans" />
+        <Image src="/our_future_plan.JPG" layout="fill" objectFit="cover" alt="Our Future Plans" />
         <div className="absolute inset-0 bg-black/50" />
           <div className="flex items-start  flex-col text-justify w-[260px] md:w-[260px] relative max-w-2xl mx-auto top-[70px] left-14 md:left-32">
             <h2 className="text-2xl md:text-4xl font-bold mb-4">Our Future Plans</h2>
