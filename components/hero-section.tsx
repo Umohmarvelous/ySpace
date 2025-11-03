@@ -23,10 +23,10 @@ export default function HeroSection({
 }: HeroSectionProps){
   return (
     <section
-      className=" relative w-full h-[600px] md:h-96 flex items-center justify-center text-center text-white overflow-hidden pt-96 pb-72"
+      className=" relative w-full h-full md:h-96 flex items-center justify-center text-center text-white overflow-hidden pt-0 md:pt-96 pb-32 md:pb-72"
       style={{
         backgroundImage: backgroundImage ? `url(${backgroundImage } )` : undefined,
-        backgroundSize: "center",
+        backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
