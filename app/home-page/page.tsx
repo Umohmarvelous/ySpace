@@ -7,6 +7,7 @@ import { motion } from "framer-motion"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import Image from "next/image"
 import CarretItemComponent from "@/components/carret"
+import Navigation from "@/components/navigation"
 
 
 
@@ -106,6 +107,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
    <>
     <main className="w-full">
       {/* Hero Section */}
+      <Navigation theme="dark"/>
         <HeroSection
           title="Shop locally. Get it delivered Instantly"
           subtitle="From food to gadgets and more, shop as a boss and get it delivered right to your doorstep- fast, and safe, all powered by drons. "

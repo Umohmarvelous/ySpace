@@ -1,9 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Image from "next/image"
 import TechHeroSection from "@/components/tech_hero_section"
 import TechDroneSection from "@/components/sections/tech-drone-section"
+import Navigation from "@/components/navigation"
 
 export default function TechnologyPage() {
   const specs = [
@@ -53,6 +53,8 @@ export default function TechnologyPage() {
 
   return (
     <div className="bg-white">
+      <Navigation theme="dark"/>
+      
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}

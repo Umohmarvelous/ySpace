@@ -2,6 +2,7 @@
 import Image from "next/image"
 import TeamMemberComponent from '../../components/team-member';
 import { useState } from "react";
+import Navigation from "@/components/navigation";
 
 interface Value {
   title: string
@@ -87,6 +88,8 @@ export default function CompanyPage() {
 
   return (
     <main className="w-full pt-0 md:pt-32">
+            <Navigation theme="light"/>
+      
 
       <section className="py-12 md:py-10 pt-32 lg:pt-24 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row md:justify-between">

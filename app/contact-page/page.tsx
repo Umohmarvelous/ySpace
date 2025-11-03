@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import ContactForm from "@/components/contact-form"
 import { Mail } from "lucide-react"
 import ContactInfo from "@/components/contact-info";
+import Navigation from "@/components/navigation";
 
 
 
@@ -60,6 +61,8 @@ export default function ContactPage(): React.ReactElement {
 
   return (
     <main className="min-h-screen bg-white overflow-hidden pt-16 md:pt-0">
+            <Navigation theme="light"/>
+      
       {/* Hero Section */}
       <section className="py-12 md:py-40 px-4 md:px-8 lg:px-12">
         <div className="max-w-7xl mx-auto">

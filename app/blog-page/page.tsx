@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar } from "@fortawesome/free-solid-svg-icons"
+import Navigation from "@/components/navigation"
 
 export default function BlogPage() {
   const posts = [
@@ -47,6 +48,8 @@ export default function BlogPage() {
 
   return (
     <div className="bg-white">
+            <Navigation theme="light"/>
+      
       {/* Header */}
       <section
         className="pt-32 pb-12 bg-white"

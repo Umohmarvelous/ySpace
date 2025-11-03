@@ -95,6 +95,7 @@ export default function CrowdfundingPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navigation theme="light"/>
 
       {/* Hero Section */}
       <motion.section

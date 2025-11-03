@@ -57,6 +57,7 @@ export default function CareerPage() {
 
   return (
     <div className="bg-white">
+      <Navigation theme="light"/>
 
       {/* Header */}
       <motion.section

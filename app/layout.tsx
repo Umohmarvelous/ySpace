@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
 import Footer from '@/components/footer'
-import Navigation from '@/components/navigation'
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -17,7 +16,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
-        <Navigation theme="dark" />
             {children}
         <Footer /> 
       </body>
