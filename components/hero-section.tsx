@@ -47,14 +47,14 @@ export default function HeroSection({
             onClick={onPrimaryClick}
             className="flex flex-row items-center self-center space-x-2 px-2 md:px-4 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-light rounded-lg transition-colors"
           >
-            <FontAwesomeIcon icon={faGooglePlay} size="lg" className='mx-2' />
+            <FontAwesomeIcon icon={faGooglePlay} size="sm" className='mx-2 w-6 h-6' />
             {primaryButtonText}
           </button>
           <button
             onClick={onSecondaryClick}
             className="flex flex-row items-center self-center space-x-2 px-2 md:px-4 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-light rounded-lg transition-colors"
           >
-            <FontAwesomeIcon icon={faApple} size="lg" className='mx-2' />              
+            <FontAwesomeIcon icon={faApple} size="sm" className='mx-2 w-6 h-6' />              
             {secondaryButtonText}
           </button>
         </div>
