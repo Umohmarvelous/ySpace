@@ -111,7 +111,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
         <HeroSection
           title="Shop locally. Get it delivered Instantly"
           subtitle="From food to gadgets and more, shop as a boss and get it delivered right to your doorstep- fast, and safe, all powered by drons. "
-          backgroundImage="/Home_IMG_1.svg"
+          backgroundImage="/Home_IMG_1.jpg"
         />
 
       {/* Features Section */}
