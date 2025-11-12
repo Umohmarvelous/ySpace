@@ -2,12 +2,13 @@
 
 import HeroSection from "@/components/hero-section"
 import FeatureCard from "@/components/feature-card"
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { motion } from "framer-motion"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import Image from "next/image"
 import CarretItemComponent from "@/components/carret"
 import Navigation from "@/components/navigation"
+import { HomePageSkeleton } from "@/components/home-page-skeleton"
 
 
 
@@ -105,6 +106,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
    return (
    <>
+    <Suspense fallback={<HomePageSkeleton />}>
     <main className="w-full">
       {/* Hero Section */}
       <Navigation theme="dark"/>
@@ -367,6 +369,7 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
         </div>
       </section>
     </main>
+    </Suspense>
    </>
    )
 }
