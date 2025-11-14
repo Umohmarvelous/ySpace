@@ -14,7 +14,9 @@ interface Drones {
 
 
 export default function DronesComp({ drones }: Drones) {
+ 
   return (
+   
    <div className="p-5 pt-0 overflow-hidden">
       <div className="overflow-hidden flex flex-col md:flex-row max-w-8xl items-center justify-space-around space-t-12 sm:space-t-20">
             
@@ -35,7 +37,7 @@ export default function DronesComp({ drones }: Drones) {
                className=" object-cover rounded-0 h-full transform "/>
          </motion.div>
       </div>
-      
+
    </div>
   )
 }

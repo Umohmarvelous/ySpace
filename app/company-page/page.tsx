@@ -3,6 +3,8 @@ import Image from "next/image"
 import TeamMemberComponent from '../../components/team-member';
 import { useState } from "react";
 import Navigation from "@/components/navigation";
+import { useSkeleton } from "@/hooks/useSkeleton"
+import { CompanyPageSkeletonTemplate } from "@/components/company-page-skeleton"
 
 interface Value {
   title: string
@@ -85,6 +87,11 @@ const founderBio : FounderBioProps[]  = [
 
 export default function CompanyPage() {
   const [selectedValueIndex, setSelectedValueIndex] = useState<number>(0)
+  const { isLoading } = useSkeleton(true, 2000)
+
+  if (isLoading) {
+    return <CompanyPageSkeletonTemplate />
+  }
 
   return (
     <main className="w-full pt-0 md:pt-32">

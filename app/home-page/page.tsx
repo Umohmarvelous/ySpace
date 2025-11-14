@@ -2,13 +2,20 @@
 
 import HeroSection from "@/components/hero-section"
 import FeatureCard from "@/components/feature-card"
-import { useState, Suspense } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import Image from "next/image"
 import CarretItemComponent from "@/components/carret"
 import Navigation from "@/components/navigation"
-import { HomePageSkeleton } from "@/components/home-page-skeleton"
+import { useSkeleton } from "@/hooks/useSkeleton"
+import { HomePageSkeletonTemplate } from "@/components/home-page-skeleton"
+import { 
+  fadeInUpVariants, 
+  fadeInVariants, 
+  staggerContainerVariants,
+  scrollAnimationConfig 
+} from "@/lib/motion-variants"
 
 
 
@@ -81,6 +88,11 @@ const shopCart = [
 export default function HomePage() {
    
 const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
+const { isLoading } = useSkeleton(true, 2000)
+
+if (isLoading) {
+  return <HomePageSkeletonTemplate />
+}
    
     
   const containerVariants = {
@@ -106,7 +118,6 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
    return (
    <>
-    <Suspense fallback={<HomePageSkeleton />}>
     <main className="w-full">
       {/* Hero Section */}
       <Navigation theme="dark"/>
@@ -118,34 +129,66 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
       {/* Features Section */}
       <section className="py-12 md:py-30 px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="flex items-center justify-center h-100 w-full my-12">
-          <Image src="/t-motor.jpg" width={1500} height={1500} alt="picture showing a donation icon" className="h-fit w-fit object-contain flex items-center justify-center " />
-        </div>
+        <motion.div 
+          className="flex items-center justify-center h-100 w-full my-12"
+          {...scrollAnimationConfig}
+          variants={fadeInVariants}
+        >
+          <Image 
+            src="/t-motor.jpg" 
+            width={1500} 
+            height={1500} 
+            alt="T-Motor partnership logo" 
+            className="h-fit w-fit object-contain flex items-center justify-center"
+            priority={false}
+            quality={75}
+          />
+        </motion.div>
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-1 mt-10 text-gray-900">Only Top notch Solution.</h2>
-          <p className="text-center text-gray-600 mb-12 md:mb-16 text-sm md:text-base">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-center mb-1 mt-10 text-gray-900"
+            {...scrollAnimationConfig}
+            variants={fadeInUpVariants}
+          >
+            Only Top notch Solution.
+          </motion.h2>
+          <motion.p 
+            className="text-center text-gray-600 mb-12 md:mb-16 text-sm md:text-base"
+            {...scrollAnimationConfig}
+            variants={fadeInUpVariants}
+          >
             Experience the future of delivery with our cutting-edge drone technology
-          </p>
+          </motion.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full  bg-transparent">
-            <FeatureCard
-              title="Shop on Marketplace"
-              description="Discover local vendors, explor categories, and order what you need - from foom to tech. 
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full bg-transparent"
+            {...scrollAnimationConfig}
+            variants={staggerContainerVariants}
+          >
+            <motion.div variants={fadeInUpVariants}>
+              <FeatureCard
+                title="Shop on Marketplace"
+                description="Discover local vendors, explor categories, and order what you need - from foom to tech. 
               Delivered by Drone, right to your doorstep."
-              backgroundImage="/Home_IMG_3.svg"
-            />
-            <FeatureCard
-              title="Send Packages Instantly"
-              description="Need to send something across town? 
+                backgroundImage="/Home_IMG_3.svg"
+              />
+            </motion.div>
+            <motion.div variants={fadeInUpVariants}>
+              <FeatureCard
+                title="Send Packages Instantly"
+                description="Need to send something across town? 
               Book a drone, drop it off, and track it live as it flies to the destination."
-              backgroundImage="/Home_IMG_4.svg"
-            />
-            <FeatureCard
-              title="Partner your Business"
-              description="Join Yspace to reach more customers and get your products delivered by drone within minutes."
-              backgroundImage="/Home_IMG_2.svg"
-            />
-          </div>
+                backgroundImage="/Home_IMG_4.svg"
+              />
+            </motion.div>
+            <motion.div variants={fadeInUpVariants}>
+              <FeatureCard
+                title="Partner your Business"
+                description="Join Yspace to reach more customers and get your products delivered by drone within minutes."
+                backgroundImage="/Home_IMG_2.svg"
+              />
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -153,46 +196,69 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
         {/* Categories Section */}
       <section className="max-w-7xl mx-auto flex items-center flex-col">
-            <div className="flex flex-col items-center justify-center mb-12">
-              <h2 className="text-3xl md:text-3xl font-bold text-center mb-2 text-gray-900">
+            <motion.div 
+              className="flex flex-col items-center justify-center mb-12"
+              {...scrollAnimationConfig}
+              variants={staggerContainerVariants}
+            >
+              <motion.h2 
+                className="text-3xl md:text-3xl font-bold text-center mb-2 text-gray-900"
+                variants={fadeInUpVariants}
+              >
                 Any item at all, shop at Yspace.
-              </h2>
-              <p className="text-center text-gray-600 md:mb-0 text-sm md:text-base">
+              </motion.h2>
+              <motion.p 
+                className="text-center text-gray-600 md:mb-0 text-sm md:text-base"
+                variants={fadeInUpVariants}
+              >
                 From everyday essentials to specialty items, we have everything you need
-              </p>
-            </div>
+              </motion.p>
+            </motion.div>
 
-            <div className="flex flex-col md:flex-row items-start flex-wrap space-x-0 space-y-10 m-0 md:space-y-0 py-12 md:py-5 px-4 sm:px-6 bg-gray-50">
+            <motion.div 
+              className="flex flex-col md:flex-row items-start flex-wrap space-x-0 space-y-10 m-0 md:space-y-0 py-12 md:py-5 px-4 sm:px-6 bg-gray-50 w-full"
+              {...scrollAnimationConfig}
+              variants={staggerContainerVariants}
+            >
               {shopCart.map((item, index) => (
-                <CarretItemComponent key={index} store={item} />
+                <motion.div key={index} variants={fadeInUpVariants}>
+                  <CarretItemComponent store={item} />
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
       </section>
 
       {/* How It Works Section */}
       <section className="py-2 md:py-16 px-4 lg:px-0 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center  text-gray-900">How Yspace Works</h2>
-          <p className="text-center text-gray-600 mb-6 md:mb-8 text-sm md:text-[15px] mt-4">
+          <motion.h2 
+            className="text-3xl md:text-4xl font-bold text-center text-gray-900"
+            {...scrollAnimationConfig}
+            variants={fadeInUpVariants}
+          >
+            How Yspace Works
+          </motion.h2>
+          <motion.p 
+            className="text-center text-gray-600 mb-6 md:mb-8 text-sm md:text-[15px] mt-4"
+            {...scrollAnimationConfig}
+            variants={fadeInUpVariants}
+          >
             From order to doorstep - our drones make delivery seamless, fast, and reliable.
-          </p>
-          <div className="max-w-3xl mx-auto ">
-
-
-
-
+          </motion.p>
+          <div className="max-w-3xl mx-auto">
             <div className="hidden md:flex flex-row relative top-[480px] left-0 right-0 bottom-0 rotate-90">
               <div className="flex flex-row rounded-lg bg-gray-300 w-full h-1 relative">
-                <div className="rounded-lg  bg-purple-900 w-80 h-1 relative">
-                </div>
+                <div className="rounded-lg bg-purple-900 w-80 h-1 relative"></div>
                 <div className="bg-purple-900 rounded-full relative right-3 bottom-[5px] rotate-60 w-4 h-4"></div>
               </div>
             </div>
 
-
-
             {/* Step 1 */}
-            <div className=" my-12 flex flex-col md:flex-row gap-6 items-start md:items-center">
+            <motion.div 
+              className="my-12 flex flex-col md:flex-row gap-6 items-start md:items-center"
+              {...scrollAnimationConfig}
+              variants={fadeInUpVariants}
+            >
               <div className="flex flex-col md:flex-row items-center justify-between w-full">
                 <div className="max-w-xl md:w-72 m-9 md:m-0 flex flex-col items-center md:items-start md:text-left text-justify justify-center">
                   <h3 className="flex md:self-start text-xl font-bold text-gray-900 mb-5 md:mb-4">Shop or Send</h3>
@@ -200,11 +266,25 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
                     Browse your favorite stores or send your own packages through the Yspace platform. Choose what you need, add it to your cart, or schedule a pickup
                   </p>
                 </div>
-                <Image src="/shop_or_send.png" objectFit="contain" width={200} height={200} alt="Our Future Plans" className="w-100 h-100 "/>
+                <Image 
+                  src="/shop_or_send.png" 
+                  objectFit="contain" 
+                  width={200} 
+                  height={200} 
+                  alt="Shop or send packages"
+                  className="w-100 h-100"
+                  quality={75}
+                  loading="lazy"
+                />
               </div>
-            </div>
+            </motion.div>
+
             {/* Step 2 */}
-            <div className=" flex flex-col items-start md:items-center">
+            <motion.div 
+              className="flex flex-col items-start md:items-center"
+              {...scrollAnimationConfig}
+              variants={fadeInUpVariants}
+            >
               <div className="flex flex-col md:flex-row-reverse items-center justify-between w-full">
                 <div className="md:my-32 max-w-xl md:w-72 m-9 md:m-0 flex flex-col items-center md:items-start text-justify justify-center pl-0 md:pl-12">
                   <h3 className="flex md:self-start text-xl font-bold text-gray-900 mb-5 md:mb-4">Drone Takes Off</h3>
@@ -212,11 +292,25 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
                     Once confirmed, the nearest drone is automatically dispatched. It picks up your order and flies the fastest route to your location.
                   </p>
                 </div>
-                <Image src="/drone_takes_off.png" objectFit="contain" width={200} height={200} alt="Our Future Plans" className="w-100 h-100"/>
+                <Image 
+                  src="/drone_takes_off.png" 
+                  objectFit="contain" 
+                  width={200} 
+                  height={200} 
+                  alt="Drone takes off for delivery"
+                  className="w-100 h-100"
+                  quality={75}
+                  loading="lazy"
+                />
               </div>
-            </div>
+            </motion.div>
+
             {/* Step 3 */}
-            <div className="flex flex-col md:flex-row items-start md:items-center">
+            <motion.div 
+              className="flex flex-col md:flex-row items-start md:items-center"
+              {...scrollAnimationConfig}
+              variants={fadeInUpVariants}
+            >
               <div className="flex flex-col md:flex-row items-center justify-between w-full">
                 <div className="max-w-xl md:w-72 m-9 md:m-0 flex flex-col items-center md:items-start md:text-left text-justify justify-center">
                   <h3 className="flex md:self-start text-xl font-bold text-gray-900 mb-5 md:mb-4">Track in Real Time</h3>
@@ -224,22 +318,44 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
                     {"Stay updated every second. You can view your drone's location, estimated arrival, and drop-off time - all live on the map."}
                   </p>
                 </div>
-                <Image src="/track_in_realtime.png" objectFit="contain" width={200} height={200} alt="Our Future Plans" className="w-100 h-100"/>
+                <Image 
+                  src="/track_in_realtime.png" 
+                  objectFit="contain" 
+                  width={200} 
+                  height={200} 
+                  alt="Track delivery in real time"
+                  className="w-100 h-100"
+                  quality={75}
+                  loading="lazy"
+                />
               </div>
-            </div>
+            </motion.div>
+
             {/* Step 4 */}
-            <div className=" my-24 flex flex-col md:flex-row-reverse items-start md:items-center">
-              <div className="flex flex-col md:flex-row-reverse items-center justify-between  w-full">
+            <motion.div 
+              className="my-24 flex flex-col md:flex-row-reverse items-start md:items-center"
+              {...scrollAnimationConfig}
+              variants={fadeInUpVariants}
+            >
+              <div className="flex flex-col md:flex-row-reverse items-center justify-between w-full">
                 <div className="max-w-xl md:w-72 flex flex-col items-center md:items-start md:text-center text-justify justify-center m-9 md:m-0">
                   <h3 className="flex md:self-center text-xl font-bold text-gray-900 mb-5 md:mb-3">Delivered to Your Doorstep</h3>
                   <p className="text-gray-600 text-sm md:text-[12px] text-center md:text-justify">
                     The drone lands safely at the designated drop zone - your items arrives intact and on time.
                   </p>
                 </div>
-                <Image src="/delivered_to_your_doorstep.png" objectFit="contain" width={200} height={200} alt="Our Future Plans" className="w-100 h-100 m-0 p-0"/>
+                <Image 
+                  src="/delivered_to_your_doorstep.png" 
+                  objectFit="contain" 
+                  width={200} 
+                  height={200} 
+                  alt="Package delivered to doorstep"
+                  className="w-100 h-100 m-0 p-0"
+                  quality={75}
+                  loading="lazy"
+                />
               </div>
-            </div>
-            
+            </motion.div>
           </div>
         </div>
       </section>
@@ -304,36 +420,72 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
 
 
       {/* Future Plans Section */}
-      <section
-        className="relative py-52 md:py-40 px-4 sm:px-6 lg:px-8 text-white text-center mb-0 "
+      <motion.section
+        className="relative py-52 md:py-40 px-4 sm:px-6 lg:px-8 text-white text-center mb-0"
         style={{
           backgroundImage: "/our_future_plan.JPG",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        {...scrollAnimationConfig}
+        variants={fadeInVariants}
       >
-        <Image src="/our_future_plan.svg" layout="fill" objectFit="cover" alt="Our Future Plans" />
+        <Image 
+          src="/our_future_plan.svg" 
+          layout="fill" 
+          objectFit="cover" 
+          alt="Our Future Plans background"
+          quality={75}
+        />
         <div className="absolute inset-0 bg-black/50" />
-          <div className="flex items-start  flex-col text-justify w-[260px] md:w-[260px] relative max-w-2xl mx-auto top-[70px] left-14 md:left-32">
-            <h2 className="text-2xl md:text-4xl font-bold mb-4">Our Future Plans</h2>
-            <p className="text-gray-100 mb-8 text-md md:text-base text-balance">
+          <motion.div 
+            className="flex items-start flex-col text-justify w-[260px] md:w-[260px] relative max-w-2xl mx-auto top-[70px] left-14 md:left-32"
+            variants={staggerContainerVariants}
+          >
+            <motion.h2 
+              className="text-2xl md:text-4xl font-bold mb-4"
+              variants={fadeInUpVariants}
+            >
+              Our Future Plans
+            </motion.h2>
+            <motion.p 
+              className="text-gray-100 mb-8 text-md md:text-base text-balance"
+              variants={fadeInUpVariants}
+            >
               {"We're not just delivering - we're redefining distance. From drones today to rockets tommorrow, Yspace is building Africa's leap into ultra-fast, borderless delivery."}
-            </p>
-            <button className="w-full px-6 md:px-8 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-normal rounded-lg transition-colors text-sm">
+            </motion.p>
+            <motion.button 
+              className="w-full px-6 md:px-8 py-3 md:py-4 bg-[#9900E8] hover:bg-purple-700 text-white font-normal rounded-lg transition-colors text-sm"
+              variants={fadeInUpVariants}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Learn More
-            </button>
-          </div>
-      </section>
+            </motion.button>
+          </motion.div>
+      </motion.section>
 
       {/* Support Section */}
-      <section className="py-12 md:py-0 px-4 sm:px-6 lg:px-8 my-20">
+      <motion.section 
+        className="py-12 md:py-0 px-4 sm:px-6 lg:px-8 my-20"
+        {...scrollAnimationConfig}
+        variants={staggerContainerVariants}
+      >
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-3xl font-bold mb-4 text-gray-900">Support the Future of Delivery</h2>
-          <p className="text-gray-600 text-sm md:text-md">
+          <motion.h2 
+            className="text-3xl md:text-3xl font-bold mb-4 text-gray-900"
+            variants={fadeInUpVariants}
+          >
+            Support the Future of Delivery
+          </motion.h2>
+          <motion.p 
+            className="text-gray-600 text-sm md:text-md"
+            variants={fadeInUpVariants}
+          >
             {"Yspace is building Africa's first drone-powered e-commerce and logistics network — and you can be part of it."}
             <br />
             We are raising funds to expand our fleet, onboard more merchants, and reach more cities.
-          </p>
+          </motion.p>
             {/* Progress Bar */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -341,11 +493,19 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
               viewport={{ once: true }}
               className="bg-gray-900 rounded-lg p-6 mt-16 flex items-center justify-between max-w-lg mx-auto flex-col md:flex-row"
             >
-                <div className=" w-full flex items-center space-x-4">
+                <div className="w-full flex items-center space-x-4">
                   <div className="w-12 md:w-12 h-12 bg-zinc-700 rounded-full flex items-center justify-center">
-                    <Image src="/box-usd 1.png" width={300} height={300} alt="picture showing a donation icon" className="w-6 h-6 md:w-6 md:h-6 object-fill text-white" />
+                    <Image 
+                      src="/box-usd 1.png" 
+                      width={300} 
+                      height={300} 
+                      alt="Donation icon"
+                      className="w-6 h-6 md:w-6 md:h-6 object-fill text-white"
+                      quality={75}
+                      loading="lazy"
+                    />
                   </div>
-                  <div className=" w-fill flex items-start flex-col justify-between space-y-4">
+                  <div className="w-fill flex items-start flex-col justify-between space-y-4">
                     <div className="text-white font-extralight flex self-start justify-start text-[20px] md:text-[16px]">$10 raised of $50,000 goal</div>
                     <div className="w-52 h-2 bg-zinc-700 rounded-full mt-1 overflow-hidden">
                       <motion.div
@@ -367,9 +527,8 @@ const [expandedFaq, setExpandedFaq] = useState<number | null>(null)
                 </motion.button>
              </motion.div>
         </div>
-      </section>
+      </motion.section>
     </main>
-    </Suspense>
    </>
    )
 }

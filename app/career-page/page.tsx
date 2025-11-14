@@ -3,8 +3,15 @@
 import { motion } from "framer-motion"
 import Navigation from "@/components/navigation"
 import Image from "next/image"
+import { useSkeleton } from "@/hooks/useSkeleton"
+import { CareerPageSkeletonTemplate } from "@/components/career-page-skeleton"
 
 export default function CareerPage() {
+  const { isLoading } = useSkeleton(true, 2000)
+
+  if (isLoading) {
+    return <CareerPageSkeletonTemplate />
+  }
   const benefits = [
     {
       title: "Flexible Work Environment",

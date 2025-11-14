@@ -1,4 +1,6 @@
 
+
+
 "use client"
 
 import { motion } from "framer-motion"
@@ -6,6 +8,8 @@ import Navigation from "@/components/navigation"
 import { Play, Check } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
+import { useSkeleton } from "@/hooks/useSkeleton"
+import { CrowdfundingPageSkeletonTemplate } from "@/components/crowdfunding-page-skeleton"
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -28,7 +32,12 @@ const itemVariants = {
 }
 
 export default function CrowdfundingPage() {
+  const { isLoading } = useSkeleton(true, 2000)
   const [expandedTier, setExpandedTier] = useState<number | null>(null)
+
+  if (isLoading) {
+    return <CrowdfundingPageSkeletonTemplate />
+  }
 
   const tiers = [
     {

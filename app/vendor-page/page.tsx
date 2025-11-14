@@ -6,7 +6,8 @@ import FAQItem from "@/components/faq-item"
 import Link from "next/link"
 import AllBenefitsCard from "@/components/all-benefits-card"
 import Navigation from "@/components/navigation"
-
+import { useSkeleton } from "@/hooks/useSkeleton"
+import { VendorPageSkeletonTemplate } from "@/components/vendor-page-skeleton"
 
 interface FAQItemProps {
   question: string
@@ -14,6 +15,11 @@ interface FAQItemProps {
   isOpen?: boolean
 }
 export default function VendorsPage() {
+  const { isLoading } = useSkeleton(true, 2000)
+
+  if (isLoading) {
+    return <VendorPageSkeletonTemplate />
+  }
 
 
   const faqss: FAQItemProps[] = [

@@ -1,107 +1,143 @@
-import { Skeleton } from "./ui/skeleton"
+'use client'
 
-export function HomePageSkeleton() {
+import { SkeletonLoader } from '@/components/skeleton-loader'
+
+/**
+ * Skeleton/Loading template for HomePage
+ * Displays a loading state while the actual page content is being loaded
+ */
+export function HomePageSkeletonTemplate() {
   return (
-    <>
-      <main className="w-full">
-        {/* Hero Section Skeleton */}
-        <div className="w-full h-96 bg-gray-100">
-          <Skeleton className="w-full h-full" />
+    <main className="w-full">
+      {/* Hero Section Skeleton */}
+      <div className="h-screen bg-gray-100 flex items-center justify-center">
+        <SkeletonLoader height="h-96" width="w-4/5" />
+      </div>
+
+      {/* Features Section Skeleton */}
+      <section className="py-12 md:py-30 px-4 sm:px-6 lg:px-8 mb-16">
+        {/* Image Skeleton */}
+        <div className="flex items-center justify-center h-100 w-full my-12">
+          <SkeletonLoader height="h-80" width="w-3/4" />
         </div>
 
-        {/* Features Section Skeleton */}
-        <section className="py-12 md:py-30 px-4 sm:px-6 lg:px-8 mb-16">
-          <div className="flex items-center justify-center h-100 w-full my-12">
-            <Skeleton className="h-96 w-full max-w-4xl" />
-          </div>
-          <div className="max-w-7xl mx-auto">
-            <Skeleton className="h-10 w-96 mx-auto mb-4" />
-            <Skeleton className="h-6 w-full max-w-2xl mx-auto mb-12" />
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3].map((i) => (
-                <Skeleton key={i} className="h-80 w-full rounded-lg" />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Categories Section Skeleton */}
-        <section className="max-w-7xl mx-auto flex items-center flex-col">
-          <div className="flex flex-col items-center justify-center mb-12 w-full">
-            <Skeleton className="h-10 w-96 mb-2" />
-            <Skeleton className="h-6 w-full max-w-xl" />
+        <div className="max-w-7xl mx-auto">
+          {/* Title Skeleton */}
+          <div className="text-center mb-12">
+            <SkeletonLoader height="h-10" width="w-1/2 mx-auto" className="mb-4" />
+            <SkeletonLoader height="h-6" width="w-2/3 mx-auto" />
           </div>
 
-          <div className="flex flex-col md:flex-row items-start flex-wrap space-x-0 space-y-10 m-0 md:space-y-0 py-12 md:py-5 px-4 sm:px-6 bg-gray-50 w-full">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="flex-1 min-w-[200px]">
-                <Skeleton className="h-64 w-full rounded-lg" />
+          {/* Feature Cards Skeleton */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="bg-gray-100 rounded-lg overflow-hidden">
+                <SkeletonLoader height="h-48" width="w-full" className="rounded-t-lg" />
+                <div className="p-6 space-y-3">
+                  <SkeletonLoader height="h-6" width="w-3/4" />
+                  <SkeletonLoader height="h-4" width="w-full" />
+                  <SkeletonLoader height="h-4" width="w-5/6" />
+                </div>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* How It Works Section Skeleton */}
-        <section className="py-2 md:py-16 px-4 lg:px-0 bg-white">
-          <div className="max-w-5xl mx-auto">
-            <Skeleton className="h-10 w-96 mx-auto mb-4" />
-            <Skeleton className="h-6 w-full max-w-2xl mx-auto mb-12" />
+      {/* Categories Section Skeleton */}
+      <section className="max-w-7xl mx-auto flex items-center flex-col px-4">
+        <div className="flex flex-col items-center justify-center mb-12 w-full">
+          <SkeletonLoader height="h-10" width="w-2/3 mx-auto" className="mb-4" />
+          <SkeletonLoader height="h-6" width="w-1/2 mx-auto" />
+        </div>
 
-            <div className="max-w-3xl mx-auto space-y-12">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-1">
-                    <Skeleton className="h-6 w-40 mb-4" />
-                    <Skeleton className="h-20 w-full" />
-                  </div>
-                  <Skeleton className="h-48 w-48 flex-shrink-0" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full py-12">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="bg-gray-100 rounded-lg overflow-hidden">
+              <SkeletonLoader height="h-40" width="w-full" className="rounded-t-lg" />
+              <div className="p-4 space-y-2">
+                <SkeletonLoader height="h-5" width="w-3/4" />
+                <SkeletonLoader height="h-4" width="w-full" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* How It Works Section Skeleton */}
+      <section className="py-12 md:py-16 px-4 lg:px-0 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <SkeletonLoader height="h-10" width="w-1/3 mx-auto" className="mb-4" />
+            <SkeletonLoader height="h-6" width="w-1/2 mx-auto" />
+          </div>
+
+          {/* Steps Skeleton */}
+          <div className="space-y-12">
+            {[1, 2, 3, 4].map((i) => (
+              <div key={i} className="flex flex-col md:flex-row gap-6 items-center md:items-start">
+                <div className="flex-1 space-y-3">
+                  <SkeletonLoader height="h-6" width="w-1/3" />
+                  <SkeletonLoader height="h-4" width="w-full" />
+                  <SkeletonLoader height="h-4" width="w-5/6" />
                 </div>
+                <div className="flex-1">
+                  <SkeletonLoader height="h-48" width="w-full" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs Section Skeleton */}
+      <section className="my-14 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6 py-12">
+          <div className="flex flex-col md:flex-row justify-between items-start space-y-12 md:space-y-0">
+            {/* Title Side */}
+            <div className="flex-1 w-full md:max-w-2xl space-y-3">
+              <SkeletonLoader height="h-10" width="w-1/2" />
+              <SkeletonLoader height="h-6" width="w-3/4" />
+            </div>
+
+            {/* FAQ Items Skeleton */}
+            <div className="flex-1 space-y-3 w-full md:max-w-2xl">
+              {[1, 2, 3, 4, 5].map((i) => (
+                <SkeletonLoader key={i} height="h-16" width="w-full" className="rounded-lg" />
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* FAQs Section Skeleton */}
-        <section className="my-14 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-start space-y-16 md:space-y-0">
-              <div className="flex-1 w-full px-6 md:px-0">
-                <Skeleton className="h-10 w-32 mb-2" />
-                <Skeleton className="h-6 w-40" />
-              </div>
+      {/* Future Plans Section Skeleton */}
+      <section className="py-40 px-4 sm:px-6 lg:px-8 bg-gray-100">
+        <div className="max-w-2xl mx-auto space-y-4">
+          <SkeletonLoader height="h-12" width="w-3/4" />
+          <SkeletonLoader height="h-6" width="w-full" />
+          <SkeletonLoader height="h-6" width="w-4/5" />
+          <SkeletonLoader height="h-10" width="w-1/3 mt-8" />
+        </div>
+      </section>
 
-              <div className="flex-1 w-full md:max-w-2xl space-y-3">
-                {[1, 2, 3, 4, 5, 6, 7].map((i) => (
-                  <Skeleton key={i} className="h-16 w-full rounded-lg" />
-                ))}
-              </div>
+      {/* Support Section Skeleton */}
+      <section className="py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center space-y-8">
+          <SkeletonLoader height="h-10" width="w-2/3 mx-auto" />
+          <div className="space-y-3">
+            <SkeletonLoader height="h-4" width="w-full" />
+            <SkeletonLoader height="h-4" width="w-5/6 mx-auto" />
+          </div>
+
+          {/* Progress Bar Skeleton */}
+          <div className="bg-gray-100 rounded-lg p-6 mt-16">
+            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+              <SkeletonLoader height="h-20" width="w-full md:w-2/3" />
+              <SkeletonLoader height="h-12" width="w-full md:w-1/4" />
             </div>
           </div>
-        </section>
-
-        {/* Future Plans Section Skeleton */}
-        <section className="relative py-52 md:py-40 px-4 sm:px-6 lg:px-8 text-white text-center mb-0">
-          <div className="absolute inset-0 bg-gray-300" />
-          <div className="relative max-w-2xl mx-auto top-[70px] left-14 md:left-32">
-            <Skeleton className="h-10 w-64 mb-4" />
-            <Skeleton className="h-24 w-full mb-8" />
-            <Skeleton className="h-12 w-40" />
-          </div>
-        </section>
-
-        {/* Support Section Skeleton */}
-        <section className="py-12 md:py-0 px-4 sm:px-6 lg:px-8 my-20">
-          <div className="max-w-3xl mx-auto text-center">
-            <Skeleton className="h-10 w-80 mx-auto mb-4" />
-            <Skeleton className="h-16 w-full max-w-2xl mx-auto mb-16" />
-
-            <div className="bg-gray-100 rounded-lg p-6 max-w-lg mx-auto">
-              <Skeleton className="h-32 w-full" />
-            </div>
-          </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+    </main>
   )
 }

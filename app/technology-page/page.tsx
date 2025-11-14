@@ -4,8 +4,15 @@ import { motion } from "framer-motion"
 import TechHeroSection from "@/components/tech_hero_section"
 import TechDroneSection from "@/components/sections/tech-drone-section"
 import Navigation from "@/components/navigation"
+import { useSkeleton } from "@/hooks/useSkeleton"
+import { TechnologyPageSkeletonTemplate } from "@/components/technology-page-skeleton"
 
 export default function TechnologyPage() {
+  const { isLoading } = useSkeleton(true, 2000)
+
+  if (isLoading) {
+    return <TechnologyPageSkeletonTemplate />
+  }
   const specs = [
     { label: 
       "HYBRID LIFT SYSTEM", 
@@ -37,7 +44,7 @@ export default function TechnologyPage() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   }
@@ -70,13 +77,8 @@ export default function TechnologyPage() {
       </motion.section>
 
       {/* Designed for Reliability */}
-      <motion.section
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={containerVariants}
-        className="pt-12 "
-      >
+      <section
+      className="pt-12 ">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <motion.h2 variants={itemVariants} className="text-2xl sm:text-3xl md:text-4xl font-medium text-gray-900 mb-10 sm:mb-0 w-[161px] md:w-[300px]">
             Designed for reliability.
@@ -84,7 +86,7 @@ export default function TechnologyPage() {
 
           <TechDroneSection />
         </div>
-      </motion.section>
+      </section>
 
       {/* Product Spec */}
       <motion.section

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
+import Navigation from "@/components/navigation"
 
 
 
@@ -81,13 +82,14 @@ export default function ServicesPage() {
 
   return (
     <div className="bg-white">
+      <Navigation theme="dark"/>
 
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className=" bg-gradient-to-br from-gray-800 to-gray-800 relative w-full h-96 md:h-auto pb-32 flex items-center justify-center text-center text-white overflow-hidden pt-32 md:pt-72"
+        className="bg-gradient-to-br from-gray-800 to-gray-800  relative w-full h-auto md:h-auto pb-16 flex items-center justify-center text-center text-white overflow-hidden pt-28 md:pt-72"
       >
         <div className="absolute inset-0 opacity-90">
           <Image src="/Service_Img_Main.svg" width={300} height={300} alt="Shop from trusted vendors or send packages fast with drone delivery" className="w-full h-full object-cover rounded-lg" />
